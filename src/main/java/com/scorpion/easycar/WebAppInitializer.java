@@ -1,5 +1,7 @@
-import org.scorpion.easycar.config.WebAppConfig;
-import org.scorpion.easycar.config.WebRootConfig;
+package com.scorpion.easycar;
+
+import com.scorpion.easycar.config.WebAppConfig;
+import com.scorpion.easycar.config.WebRootConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
