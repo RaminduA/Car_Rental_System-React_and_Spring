@@ -1,5 +1,5 @@
-import org.scorpion.easyrental.config.WebAppConfig;
-import org.scorpion.easyrental.config.WebRootConfig;
+import org.scorpion.easycar.config.WebAppConfig;
+import org.scorpion.easycar.config.WebRootConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
