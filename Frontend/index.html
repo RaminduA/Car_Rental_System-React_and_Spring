@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Easy Car Rental</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/styles.css">
-    <link rel="icon" href="assets/images/car-icon.png">
-
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" rel="stylesheet">
+    <link href="assets/images/car-icon.png" rel="icon">
+    <link href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet">
+    <link href="style/styles.css" rel="stylesheet">
+    <link href="style/components/middle-button.css" rel="stylesheet">
+    <link href="style/components/toggle-button.css" rel="stylesheet">
 </head>
 <body>
 
 <!-- ***** Preloader Start ***** -->
-<div id="js-preloader" class="js-preloader">
+<div class="js-preloader" id="js-preloader">
     <div class="preloader-inner">
-        <img src="assets/images/car-icon.png" alt="preloader-icon">
+        <img alt="preloader-icon" src="assets/images/car-icon.png">
         <span class="dot"></span>
         <div class="dots">
             <span></span>
@@ -30,15 +33,15 @@
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
-                    <a href="#" id="logo-link" class="logo">Easy <em>Car</em></a>
+                    <a class="logo" href="#" id="logo-link">Easy <em>Car</em></a>
                     <ul class="nav">
-                        <li><a href="#" id="home-link" class="active">Home</a></li>
-                        <li><a href="#" id="booking-link" class="active">Booking</a></li>
-                        <li><a href="#" id="cars-link" class="active">Cars</a></li>
-                        <li><a href="#" id="history-link" class="active">History</a></li>
-                        <li><a href="#" id="notifications-link" class="active">Notifications</a></li>
-                        <li><a href="#" id="profile-link" class="active">Profile</a></li>
-                        <li><a href="#" id="contact-link" class="active">Contact</a></li>
+                        <li><a class="active" href="#" id="home-link">Home</a></li>
+                        <li><a href="#" id="booking-link">Booking</a></li>
+                        <li><a href="#" id="cars-link">Cars</a></li>
+                        <li><a href="#" id="history-link">History</a></li>
+                        <li><a href="#" id="notifications-link">Notifications</a></li>
+                        <li><a href="#" id="profile-link">Profile</a></li>
+                        <li><a href="#" id="contact-link">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -69,13 +72,143 @@
             </div>
         </div>
 
+        <div class="main-page" id="customer-booking-page">
+            <div class="page-overlay">
+                <div class="booking-container">
+                    <div class="booking-heading-container">
+                        <h3>Book your car today!</h3>
+                    </div>
+                    <div class="booking-form-container">
+                        <form action="">
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="booking-car-type"></label>
+                                    <select class="form-control" id="booking-car-type" name="car_type">
+                                        <option value="">Select Your Car For Booking</option>
+                                        <option>BMW</option>
+                                        <option>Honda</option>
+                                        <option>Toyota</option>
+                                        <option>Nissan</option>
+                                        <option>Chrysler</option>
+                                        <option>Chevrolet</option>
+                                        <option>Mercedes</option>
+                                        <option>Volvo</option>
+                                        <option>Suzuki</option>
+                                    </select>
+                                </div>
+                                <button type="button">Select Car</button>
+                            </div>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i aria-hidden="true" class="fa fa-map-marker-alt"></i>
+                                        Pick-Up
+                                    </span>
+                                    <label for="pickup"></label>
+                                    <select class="form-control" data-live-search="true" id="pickup" name="pickup"
+                                            required="required">
+                                        <option value="">Select Pick-Up</option>
+                                        <option>New York</option>
+                                        <option>Los Angeles</option>
+                                        <option>Houston</option>
+                                        <option>San Diego</option>
+                                        <option>Chicago</option>
+                                        <option>California</option>
+                                        <option>San Jose</option>
+                                        <option>Atlanta</option>
+                                        <option>Kansas City</option>
+                                        <option>Chattanooga</option>
+                                    </select>
+                                </div>
+                                <div class="input-group date form_datetime" data-date="2018-02-22T05:25:07Z"
+                                     data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                    <label for="booking-pickup-datetime"></label>
+                                    <input class="form-control" id="booking-pickup-datetime" name="datetime_pick" placeholder="Select Date and Time" readonly=""
+                                           required="" size="16"
+                                           type="text" value="">
+                                    <span class="input-group-addon"><span class="fa fa-undo"></span></span>
+                                    <span class="input-group-addon"><span class="fa fa-calendar-alt"></span></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i aria-hidden="true" class="fa fa-map-marker-alt"></i>
+                                        Drop-Off
+                                    </span>
+                                    <label for="drop"></label>
+                                    <select class="form-control" data-live-search="true" id="drop" name="dropoff"
+                                            required="required">
+                                        <option value="">Select Drop-Off</option>
+                                        <option>New York</option>
+                                        <option>Los Angeles</option>
+                                        <option>Houston</option>
+                                        <option>San Diego</option>
+                                        <option>Chicago</option>
+                                        <option>California</option>
+                                        <option>San Jose</option>
+                                        <option>Atlanta</option>
+                                        <option>Kansas City</option>
+                                        <option>Chattanooga</option>
+                                    </select>
+                                </div>
+                                <div class="input-group date form_datetime" data-date="2018-02-22T05:25:07Z"
+                                     data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                    <label for="booking-drop-datetime"></label>
+                                    <input class="form-control" id="booking-drop-datetime" name="datetime_off" placeholder="Select Date and Time" readonly=""
+                                           required="" size="16"
+                                           type="text" value="">
+                                    <span class="input-group-addon"><span class="fa fa-undo"></span></span>
+                                    <span class="input-group-addon"><span class="fa fa-calendar-alt"></span></span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="booking-customer-name"></label>
+                                    <input class="form-control" id="booking-customer-name" name="name" placeholder="Your Name"
+                                           required="" type="text">
+                                </div>
+                                <div class="input-group">
+                                    <label for="booking-customer-email"></label>
+                                    <input class="form-control" id="booking-customer-email" name="email" placeholder="Your Email"
+                                           required="" type="email">
+                                </div>
+                                <div class="input-group">
+                                    <label for="booking-need-driver">Do you need a driver?</label>
+                                    <div class="toggle-button" id="booking-need-driver">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round">
+                                                <small class="slider-text"></small>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="booking-button-container">
+                        <div class="middle-button">
+                            Request
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 </main>
 <!-- ***** Main Area End ***** -->
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://momentjs.com/downloads/moment.js"></script>
-
+<script src="script/spa/spa.js"></script>
 </body>
 </html>
