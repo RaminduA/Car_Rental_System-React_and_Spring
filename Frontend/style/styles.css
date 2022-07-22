@@ -100,6 +100,10 @@ button:focus {
     color: #F9C200;
 }
 
+.main-nav li:hover a.active {
+    color: #EEB600;
+}
+
 
 main{
     position: absolute;
@@ -157,6 +161,11 @@ main{
 }
 
 .page-overlay .caption h4:nth-child(2) {
+    color: Transparent;
+}
+
+.page-overlay .caption h4:nth-child(2) a {
+    text-decoration: none;
     color: #F9C200;
 }
 
@@ -320,4 +329,11 @@ main{
     --c2: #F9C200;
     --c3: #FFF;
     --c4: #1E2E3C;
+}
+
+
+#customer-cars-page{
+    height: 100vh;
+    background: url("../assets/images/cars-bg.jpg") no-repeat bottom;
+    background-size: cover;
 }

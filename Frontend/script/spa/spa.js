@@ -9,6 +9,7 @@ let contact_link = $("#contact-link");
 
 let customer_home_page = $("#customer-home-page");
 let customer_booking_page = $("#customer-booking-page");
+let customer_cars_page = $("#customer-cars-page");
 
 $(document).ready(function() {
     focusActiveLink(home_link);
@@ -32,6 +33,7 @@ booking_link.click(function (){
 
 cars_link.click(function (){
     focusActiveLink(cars_link);
+    displayActivePage(customer_cars_page);
 });
 
 history_link.click(function (){
@@ -64,5 +66,6 @@ function focusActiveLink(active_link) {
 function displayActivePage(active_page) {
     customer_home_page.css("display","none");
     customer_booking_page.css("display","none");
+    customer_cars_page.css("display","none");
     active_page.css("display","block");
 }
