@@ -1,16 +1,30 @@
-$('.owl-carousel').owlCarousel({
+let owl = $('.owl-carousel');
+
+owl.owlCarousel({
     loop:true,
     margin:10,
-    nav:true,
+    dots:false,
     responsive:{
         0:{
             items:1
         },
         600:{
-            items:3
+            items:1
         },
         1000:{
-            items:5
+            items:1
         }
     }
+});
+
+
+// With optional speed parameter
+// Parameters has to be in square bracket '[]'
+
+$('.car-list-next').click(function() {
+    owl.trigger('next.owl.carousel', [600]);
+})
+
+$('.car-list-prev').click(function() {
+    owl.trigger('prev.owl.carousel', [600]);
 })

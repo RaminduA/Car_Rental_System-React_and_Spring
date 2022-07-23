@@ -7,6 +7,12 @@
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" rel="stylesheet">
     <link href="assets/images/car-icon.png" rel="icon">
     <link href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+          integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+          integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="style/styles.css" rel="stylesheet">
     <link href="style/components/middle-button.css" rel="stylesheet">
     <link href="style/components/toggle-button.css" rel="stylesheet">
@@ -35,7 +41,7 @@
                 <nav class="main-nav">
                     <a class="logo" href="#" id="logo-link">Easy <em>Car</em></a>
                     <ul class="nav">
-                        <li><a class="active" href="#" id="home-link">Home</a></li>
+                        <li><a href="#" id="home-link" class="active">Home</a></li>
                         <li><a href="#" id="booking-link">Booking</a></li>
                         <li><a href="#" id="cars-link">Cars</a></li>
                         <li><a href="#" id="history-link">History</a></li>
@@ -206,166 +212,136 @@
 
         <div class="main-page" id="customer-cars-page">
             <div class="page-overlay">
-                <div class="section-title">
-                    <h3>Vehicle Models <span>For Rent</span></h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet,
-                        massa ac ornare feugiat, nunc dui auctor ipsum, sed posuere eros sapien
-                        id quam. Maecenas odio nisi, efficitur eget
-                    </p>
-                </div>
-                <div class="car-list">
-                    <ul class="owl-carousel owl-theme">
-                        <li class="item">
-                            <div class="row car">
-                                <div class="col-md-3">
-                                    <div class="car-tag">
-                                        <h3>BMW 3-SERIES</h3>
-                                        <div class="subtitle">ModernLine</div>
-                                        <div class="carPrice"> <strong>$99</strong> <span>/Day</span> </div>
-                                        <a href="#" class="btn">
-                                            <i class="fa fa-calendar" aria-hidden="true"></i>
-                                            Reserve Now
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="assets/images/cars/01.png" class="image-popup">
-                                        <img src="assets/images/cars/01.png" alt="">
+                <div class="middle-section">
+                    <div class="section-title">
+                        <h3>Vehicle Models <span>For Rent</span></h3>
+                        <p>
+                            Alienation and loneliness became a cable that stretched hundreds of miles
+                            long, pulled to the breaking point by a gigantic winch. And through that
+                            taut line, day and night, he received indecipherable messages
+                        </p>
+                    </div>
+                    <div class="main-carousel">
+                        <div class="car-list owl-carousel owl-theme">
+                            <div class="item car">
+                                <div class="car-tag">
+                                    <h3>BMW 3-SERIES</h3>
+                                    <div class="subtitle">ModernLine</div>
+                                    <div class="car-price"> <strong>$99</strong> <span>/Day</span> </div>
+                                    <a href="#" class="btn">
+                                        <i class="fa fa-calendar-alt" aria-hidden="true"></i>
+                                        Reserve Now
                                     </a>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="car-info">
-                                        <ul>
-                                            <li>Doors: <strong>4</strong></li>
-                                            <li>Passengers: <strong>5</strong></li>
-                                            <li>Luggage: <strong>2 Bags</strong></li>
-                                            <li>Transmission: <strong>Automatic</strong></li>
-                                            <li>Air conditioning: <strong>Dual Zone</strong></li>
-                                            <li>Minimum age: <strong>35 years</strong></li>
-                                        </ul>
-                                    </div>
+                                <div class="car-image">
+                                    <img src="assets/images/cars/01.png" alt="">
+                                </div>
+                                <div class="car-info">
+                                    <ul>
+                                        <li>Doors: <strong>4</strong></li>
+                                        <li>Passengers: <strong>5</strong></li>
+                                        <li>Luggage: <strong>2 Bags</strong></li>
+                                        <li>Transmission: <strong>Automatic</strong></li>
+                                        <li>Air conditioning: <strong>Dual Zone</strong></li>
+                                        <li>Minimum age: <strong>35 years</strong></li>
+                                    </ul>
                                 </div>
                             </div>
-                        </li>
-                        <li class="item">
-                            <div class="row car">
-                                <div class="col-md-3">
-                                    <div class="car-tag">
-                                        <h3>Subaru Impreza</h3>
-                                        <div class="subtitle">Premium</div>
-                                        <div class="carPrice"> <strong>$125</strong> <span>/Day</span> </div>
-                                        <a href="#" class="btn">
-                                            <i class="fa fa-calendar" aria-hidden="true"></i>
-                                            Reserve Now
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="assets/images/cars/02.png" class="image-popup">
-                                        <img src="assets/images/cars/02.png" alt="">
+                            <div class="item car">
+                                <div class="car-tag">
+                                    <h3>Subaru Impreza</h3>
+                                    <div class="subtitle">Premium</div>
+                                    <div class="car-price"> <strong>$125</strong> <span>/Day</span> </div>
+                                    <a href="#" class="btn">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        Reserve Now
                                     </a>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="car-info">
-                                        <ul>
-                                            <li>Doors: <strong>4</strong></li>
-                                            <li>Passengers: <strong>5</strong></li>
-                                            <li>Luggage: <strong>2 Bags</strong></li>
-                                            <li>Transmission: <strong>Automatic</strong></li>
-                                            <li>Air conditioning: <strong>Dual Zone</strong></li>
-                                            <li>Minimum age: <strong>35 years</strong></li>
-                                        </ul>
-                                    </div>
+                                <div class="car-image">
+                                    <img src="assets/images/cars/02.png" alt="">
+                                </div>
+                                <div class="car-info">
+                                    <ul>
+                                        <li>Doors: <strong>4</strong></li>
+                                        <li>Passengers: <strong>5</strong></li>
+                                        <li>Luggage: <strong>2 Bags</strong></li>
+                                        <li>Transmission: <strong>Automatic</strong></li>
+                                        <li>Air conditioning: <strong>Dual Zone</strong></li>
+                                        <li>Minimum age: <strong>35 years</strong></li>
+                                    </ul>
                                 </div>
                             </div>
-                        </li>
-                        <li class="item">
-                            <div class="row car">
-                                <div class="col-md-3">
-                                    <div class="car-tag">
-                                        <h3>Hyundai Santa Fe XL</h3>
-                                        <div class="subtitle">Streetsville H</div>
-                                        <div class="carPrice"> <strong>$199</strong> <span>/Day</span> </div>
-                                        <a href="#" class="btn">
-                                            <i class="fa fa-calendar" aria-hidden="true"></i>
-                                            Reserve Now
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="assets/images/cars/03.png" class="image-popup">
-                                        <img src="assets/images/cars/03.png" alt="">
+                            <div class="item car">
+                                <div class="car-tag">
+                                    <h3>Hyundai Santa Fe XL</h3>
+                                    <div class="subtitle">Streetsville H</div>
+                                    <div class="car-price"> <strong>$199</strong> <span>/Day</span> </div>
+                                    <a href="#" class="btn">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        Reserve Now
                                     </a>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="car-info">
-                                        <ul>
-                                            <li>Doors: <strong>4</strong></li>
-                                            <li>Passengers: <strong>5</strong></li>
-                                            <li>Luggage: <strong>2 Bags</strong></li>
-                                            <li>Transmission: <strong>Automatic</strong></li>
-                                            <li>Air conditioning: <strong>Dual Zone</strong></li>
-                                            <li>Minimum age: <strong>35 years</strong></li>
-                                        </ul>
-                                    </div>
+                                <div class="car-image">
+                                    <img src="assets/images/cars/03.png" alt="">
+                                </div>
+                                <div class="car-info">
+                                    <ul>
+                                        <li>Doors: <strong>4</strong></li>
+                                        <li>Passengers: <strong>5</strong></li>
+                                        <li>Luggage: <strong>2 Bags</strong></li>
+                                        <li>Transmission: <strong>Automatic</strong></li>
+                                        <li>Air conditioning: <strong>Dual Zone</strong></li>
+                                        <li>Minimum age: <strong>35 years</strong></li>
+                                    </ul>
                                 </div>
                             </div>
-                        </li>
-                        <li class="item">
-                            <div class="row car">
-                                <div class="col-md-3">
-                                    <div class="car-tag">
-                                        <h3>Honda Vezel</h3>
-                                        <div class="subtitle">Streetsville H</div>
-                                        <div class="carPrice"> <strong>$215</strong> <span>/Day</span> </div>
-                                        <a href="#" class="btn">
-                                            <i class="fa fa-calendar" aria-hidden="true"></i>
-                                            Reserve Now
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="assets/images/cars/04.png" class="image-popup">
-                                        <img src="assets/images/cars/04.png" alt="">
+                            <div class="item car">
+                                <div class="car-tag">
+                                    <h3>Honda Vezel</h3>
+                                    <div class="subtitle">Streetsville H</div>
+                                    <div class="car-price"> <strong>$215</strong> <span>/Day</span> </div>
+                                    <a href="#" class="btn">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        Reserve Now
                                     </a>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="car-info">
-                                        <ul>
-                                            <li>Doors: <strong>4</strong></li>
-                                            <li>Passengers: <strong>5</strong></li>
-                                            <li>Luggage: <strong>2 Bags</strong></li>
-                                            <li>Transmission: <strong>Automatic</strong></li>
-                                            <li>Air conditioning: <strong>Dual Zone</strong></li>
-                                            <li>Minimum age: <strong>35 years</strong></li>
-                                        </ul>
-                                    </div>
+                                <div class="car-image">
+                                    <img src="assets/images/cars/04.png" alt="">
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="owl-controls">
-                        <div class="owl-nav">
-                            <div class="owl-prev" style="">
-                                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                            </div>
-                            <div class="owl-next" style="">
-                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                <div class="car-info">
+                                    <ul>
+                                        <li>Doors: <strong>4</strong></li>
+                                        <li>Passengers: <strong>5</strong></li>
+                                        <li>Luggage: <strong>2 Bags</strong></li>
+                                        <li>Transmission: <strong>Automatic</strong></li>
+                                        <li>Air conditioning: <strong>Dual Zone</strong></li>
+                                        <li>Minimum age: <strong>35 years</strong></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="owl-dots" style="display: block;">
-                            <div class="owl-dot">
-                                <span></span>
+                        <div class="car-list-controls">
+                            <div class="car-list-nav">
+                                <div class="car-list-prev">
+                                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                                </div>
+                                <div class="car-list-next">
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </div>
                             </div>
-                            <div class="owl-dot">
-                                <span></span>
-                            </div>
-                            <div class="owl-dot active">
-                                <span></span>
-                            </div>
-                            <div class="owl-dot">
-                                <span></span>
+                            <div class="owl-dots" style="display: block;">
+                                <div class="owl-dot">
+                                    <span></span>
+                                </div>
+                                <div class="owl-dot">
+                                    <span></span>
+                                </div>
+                                <div class="owl-dot active">
+                                    <span></span>
+                                </div>
+                                <div class="owl-dot">
+                                    <span></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -382,7 +358,9 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://momentjs.com/downloads/moment.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="script/spa/spa.js"></script>
 <script src="script/controller/customer-home-controller.js"></script>
 <script src="script/controller/customer-booking-controller.js"></script>

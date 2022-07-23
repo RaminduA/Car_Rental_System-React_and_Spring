@@ -337,3 +337,250 @@ main{
     background: url("../assets/images/cars-bg.jpg") no-repeat bottom;
     background-size: cover;
 }
+
+#customer-cars-page .middle-section{
+    position: absolute;
+    margin: 0;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 60%;
+}
+
+#customer-cars-page .section-title {
+    margin: 0;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+#customer-cars-page .section-title h3 {
+    position: relative;
+    font-size: 40px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    color: #FFF;
+    font-weight: 700;
+    line-height: 42px;
+}
+
+#customer-cars-page .section-title h3 span{
+    color: #F9C200;
+}
+
+#customer-cars-page .section-title h3:after {
+    position: absolute;
+    content: '';
+    background: #F9C200;
+    height: 2px;
+    width: 60px;
+    bottom: -30px;
+    left: 50%;
+    margin-left: -30px;
+}
+
+#customer-cars-page .section-title h3:before {
+    position: absolute;
+    content: '';
+    background: #F9C200;
+    height: 9px;
+    width: 4px;
+    bottom: -33px;
+    left: 50%;
+    margin-left: -2px;
+}
+
+#customer-cars-page .section-title p {
+    max-width: 800px;
+    margin: auto;
+    color: #c9c9c9;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 25px;
+}
+
+
+#customer-cars-page .main-carousel{
+    position: absolute;
+    bottom: 0;
+    left: 12.5%;
+    width: 75vw;
+    height: 39vh;
+}
+
+
+#customer-cars-page .car-list{
+    position: relative;
+    width: 75vw;
+    height: 33.15vh;
+}
+
+#customer-cars-page .car-list .car{
+    display: flex;
+    width: 75vw;
+    height: 33.15vh;
+}
+
+#customer-cars-page .car-list .car-tag{
+    width: 25%;
+    height: 33.15vh;
+}
+
+#customer-cars-page .car-list .car-tag h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #F9C200;
+    margin: 30px 0 0 0;
+}
+
+#customer-cars-page .car-list .car-tag .subtitle {
+    position: relative;
+    color: #888;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+#customer-cars-page .car-list .car-tag .subtitle:after {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 5px;
+    background: #F9C200;
+    left: 0;
+    bottom: 0;
+}
+
+#customer-cars-page .car-list .car-tag .car-price strong {
+    font-size: 48px;
+    color: #DDD;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 48px;
+    font-weight: 700;
+}
+
+#customer-cars-page .car-list .car-tag .car-price span {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    vertical-align: top;
+    color: #999;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+#customer-cars-page .car-list .car-tag .btn{
+    display: block;
+    background: #333;
+    margin-top: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+#customer-cars-page .car-list .car-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 33.15vh;
+}
+
+#customer-cars-page .car-list .car-image img{
+    width: 85%;
+    margin: 0;
+}
+
+#customer-cars-page .car-list .car-info{
+    position: relative;;
+    width: 25%;
+    height: 33.15vh;
+    background-color: #EEB600;
+    color: #FFF;
+}
+
+#customer-cars-page .car-list .car-info ul{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#customer-cars-page .car-list .car-info ul li{
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+#customer-cars-page .car-list .car-info span{
+    font-weight: 700;
+}
+
+#customer-cars-page .car-list-controls{
+    position: relative;
+    height: 80px;
+    width: 100%;
+}
+
+#customer-cars-page .car-list-nav{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+#customer-cars-page .car-list-nav div{
+    position: relative;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    color: #CCC;
+    cursor: pointer;
+    margin-left: 12px;
+    margin-right: 12px;
+    height: 40px;
+    width: 40px;
+    border: 3px solid #CCC;
+    border-radius: 100%;
+    transition: all 0.3s ease 0s;
+}
+
+#customer-cars-page .car-list-nav div:hover{
+    border: 3px solid #F9C200;
+    color: #F9C200;
+}
+
+#customer-cars-page .car-list-nav i {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    height: auto;
+}
