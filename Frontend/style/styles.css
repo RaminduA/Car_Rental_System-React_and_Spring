@@ -443,12 +443,14 @@ main{
 }
 
 
+#common-cars-page,
 #customer-cars-page{
     height: 100vh;
     background: url("../assets/images/cars-bg.jpg") no-repeat bottom;
     background-size: cover;
 }
 
+#common-cars-page .middle-section,
 #customer-cars-page .middle-section{
     position: absolute;
     margin: 0;
@@ -459,12 +461,14 @@ main{
     height: 60%;
 }
 
+#common-cars-page .section-title,
 #customer-cars-page .section-title {
     margin: 0;
     padding-bottom: 50px;
     text-align: center;
 }
 
+#common-cars-page .section-title h3,
 #customer-cars-page .section-title h3 {
     position: relative;
     font-size: 40px;
@@ -476,10 +480,12 @@ main{
     line-height: 42px;
 }
 
+#common-cars-page .section-title h3 span,
 #customer-cars-page .section-title h3 span{
     color: #F9C200;
 }
 
+#common-cars-page .section-title h3:after,
 #customer-cars-page .section-title h3:after {
     position: absolute;
     content: '';
@@ -491,6 +497,7 @@ main{
     margin-left: -30px;
 }
 
+#common-cars-page .section-title h3:before,
 #customer-cars-page .section-title h3:before {
     position: absolute;
     content: '';
@@ -502,6 +509,7 @@ main{
     margin-left: -2px;
 }
 
+#common-cars-page .section-title p,
 #customer-cars-page .section-title p {
     max-width: 800px;
     margin: auto;
@@ -512,6 +520,7 @@ main{
 }
 
 
+#common-cars-page .main-carousel,
 #customer-cars-page .main-carousel{
     position: absolute;
     bottom: 0;
@@ -520,23 +529,27 @@ main{
 }
 
 
+#common-cars-page .car-list,
 #customer-cars-page .car-list{
     position: relative;
     width: 75vw;
     height: 33.15vh;
 }
 
+#common-cars-page .car-list .car,
 #customer-cars-page .car-list .car{
     display: flex;
     width: 75vw;
     height: 33.15vh;
 }
 
+#common-cars-page .car-list .car-tag,
 #customer-cars-page .car-list .car-tag{
     width: 25%;
     height: 33.15vh;
 }
 
+#common-cars-page .car-list .car-tag h3,
 #customer-cars-page .car-list .car-tag h3 {
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
@@ -546,6 +559,7 @@ main{
     margin: 30px 0 0 0;
 }
 
+#common-cars-page .car-list .car-tag .subtitle,
 #customer-cars-page .car-list .car-tag .subtitle {
     position: relative;
     color: #888;
@@ -558,6 +572,7 @@ main{
     padding-bottom: 20px;
 }
 
+#common-cars-page .car-list .car-tag .subtitle:after,
 #customer-cars-page .car-list .car-tag .subtitle:after {
     position: absolute;
     content: '';
@@ -568,6 +583,7 @@ main{
     bottom: 0;
 }
 
+#common-cars-page .car-list .car-tag .car-price strong,
 #customer-cars-page .car-list .car-tag .car-price strong {
     font-size: 48px;
     color: #DDD;
@@ -576,6 +592,7 @@ main{
     font-weight: 700;
 }
 
+#common-cars-page .car-list .car-tag .car-price span,
 #customer-cars-page .car-list .car-tag .car-price span {
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
@@ -587,6 +604,7 @@ main{
     margin-top: 5px;
 }
 
+#common-cars-page .car-list .car-tag .btn,
 #customer-cars-page .car-list .car-tag .btn{
     display: block;
     background: #333;
@@ -603,6 +621,7 @@ main{
     border: 1px solid transparent;
 }
 
+#common-cars-page .car-list .car-image,
 #customer-cars-page .car-list .car-image{
     display: flex;
     justify-content: center;
@@ -611,11 +630,13 @@ main{
     height: 33.15vh;
 }
 
+#common-cars-page .car-list .car-image img,
 #customer-cars-page .car-list .car-image img{
     width: 85%;
     margin: 0;
 }
 
+#common-cars-page .car-list .car-info,
 #customer-cars-page .car-list .car-info{
     position: relative;;
     width: 25%;
@@ -624,6 +645,7 @@ main{
     color: #FFF;
 }
 
+#common-cars-page .car-list .car-info ul,
 #customer-cars-page .car-list .car-info ul{
     position: relative;
     width: 100%;
@@ -636,6 +658,7 @@ main{
     justify-content: space-between;
 }
 
+#common-cars-page .car-list .car-info ul li,
 #customer-cars-page .car-list .car-info ul li{
     position: relative;
     flex-grow: 1;
@@ -648,16 +671,19 @@ main{
     font-weight: 400;
 }
 
+#common-cars-page .car-list .car-info span,
 #customer-cars-page .car-list .car-info span{
     font-weight: 700;
 }
 
+#common-cars-page .car-list-controls,
 #customer-cars-page .car-list-controls{
     position: relative;
     height: 80px;
     width: 100%;
 }
 
+#common-cars-page .car-list-nav,
 #customer-cars-page .car-list-nav{
     position: relative;
     display: flex;
@@ -667,6 +693,7 @@ main{
     width: 100%;
 }
 
+#common-cars-page .car-list-nav div,
 #customer-cars-page .car-list-nav div{
     position: relative;
     display: flex;
@@ -683,11 +710,13 @@ main{
     transition: all 0.3s ease 0s;
 }
 
+#common-cars-page .car-list-nav div:hover,
 #customer-cars-page .car-list-nav div:hover{
     border: 3px solid #F9C200;
     color: #F9C200;
 }
 
+#common-cars-page .car-list-nav i,
 #customer-cars-page .car-list-nav i {
     display: flex;
     align-self: center;

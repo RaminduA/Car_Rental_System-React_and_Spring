@@ -1,4 +1,4 @@
-let customer_cars = [
+let common_cars = [
     {
         car_tag: {
             h3: 'BMW 3-SERIES',
@@ -66,12 +66,12 @@ let customer_cars = [
 ];
 
 window.onload = function() {
-    loadAllCustomerCars();
+    loadAllCommonCars();
 };
 
-let customer_owl = $('#customer-car-list');
+let common_owl = $('#common-car-list');
 
-customer_owl.owlCarousel({
+common_owl.owlCarousel({
     loop:true,
     margin:10,
     autoplay:false,
@@ -86,15 +86,20 @@ customer_owl.owlCarousel({
     }
 });
 
-$('#customer-car-list-next').click(function() {
-    customer_owl.trigger('next.owl.carousel', [600]);
+
+// With optional speed parameter
+// Parameters has to be in square bracket '[]'
+
+$('#common-car-list-next').click(function() {
+    common_owl.trigger('next.owl.carousel', [600]);
 });
 
-$('#customer-car-list-prev').click(function() {
-    customer_owl.trigger('prev.owl.carousel', [600]);
+$('#common-car-list-prev').click(function() {
+    common_owl.trigger('prev.owl.carousel', [600]);
 });
 
-function loadAllCustomerCars(){
+
+function loadAllCommonCars(){
     for (let c of customer_cars) {
         let car = $('<div class="item car"></div>');
 
@@ -106,6 +111,6 @@ function loadAllCustomerCars(){
         car.append(car_image);
         car.append(car_info);
 
-        customer_owl.trigger('add.owl.carousel', [car]).trigger('refresh.owl.carousel');
+        common_owl.trigger('add.owl.carousel', [car]).trigger('refresh.owl.carousel');
     }
 }
