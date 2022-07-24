@@ -1,3 +1,6 @@
+let common_header_area = $("#common-header-area");
+let customer_header_area = $("#customer-header-area");
+
 let common_logo_link = $("#common-logo-link");
 let common_home_link = $("#common-home-link");
 let common_services_link = $("#common-services-link");
@@ -13,13 +16,16 @@ let customer_notifications_link = $("#customer-notifications-link");
 let customer_profile_link = $("#customer-profile-link");
 let customer_contact_link = $("#customer-contact-link");
 
+let common_home_page = $("#common-home-page");
+
 let customer_home_page = $("#customer-home-page");
 let customer_booking_page = $("#customer-booking-page");
 let customer_cars_page = $("#customer-cars-page");
 
 $(document).ready(function() {
+    displayActiveHeaderArea(common_header_area);
     focusActiveLink(common_home_link);
-    //displayActivePage(common_home_page);
+    displayActivePage(common_home_page);
 });
 
 common_logo_link.click(function (){
@@ -100,7 +106,14 @@ function focusActiveLink(active_link) {
     active_link.addClass("active");
 }
 
+function displayActiveHeaderArea(active_header_area) {
+    common_header_area.css("display","none");
+    customer_header_area.css("display","none");
+    active_header_area.css("display","flex");
+}
+
 function displayActivePage(active_page) {
+    common_home_page.css("display","none");
     customer_home_page.css("display","none");
     customer_booking_page.css("display","none");
     customer_cars_page.css("display","none");

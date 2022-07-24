@@ -34,7 +34,7 @@
 <!-- ***** Preloader End ***** -->
 
 <!-- ***** Header Start ***** -->
-<header class="header-area">
+<header class="header-area" id="common-header-area">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -46,12 +46,16 @@
                         <li><a href="#" id="common-cars-link">Cars</a></li>
                         <li><a href="#" id="common-contact-link">Contact</a></li>
                     </ul>
+                    <div class="header-button-container">
+                        <button class="header-button" id="common-login-button" type="button">Login</button>
+                        <button class="header-button" id="common-register-button" type="button">Register</button>
+                    </div>
                 </nav>
             </div>
         </div>
     </div>
 </header>
-<header style="display: none" class="header-area" id="customer-header-area">
+<header class="header-area" id="customer-header-area">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -77,6 +81,30 @@
 <main class="container-fluid">
     <section class="row">
 
+        <div class="main-page" id="common-home-page">
+            <div style="display: none" class="main-page-bg-div">
+                <div class="bg-div"></div>
+                <div class="bg-div"></div>
+            </div>
+            <div class="page-overlay">
+                <div class="caption">
+                    <h2>Rent a car</h2>
+                    <h3>Easy, fast & precise</h3>
+                    <h6>Search, find and enjoy your trip with best cars</h6>
+                    <div class="middle-button" id="common-home-middle-button">
+                        Hire Now
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div style="display: none" class="main-image">
+                    <img src="assets/images/cars/05.png" alt="car">
+                </div>
+            </div>
+        </div>
+
         <div class="main-page" id="customer-home-page">
             <div class="page-overlay">
                 <div class="caption">
@@ -88,7 +116,7 @@
                     </h4>
                     <h2>Welcome to <em>Easy Car</em></h2>
                     <h6>Make trips better</h6>
-                    <div class="middle-button" id="home-middle-button">
+                    <div class="middle-button" id="customer-home-middle-button">
                         Hire Now
                         <span></span>
                         <span></span>

@@ -44,6 +44,7 @@ button:focus {
 .main-nav{
     display: flex;
     align-items: center;
+    justify-content: end;
 }
 
 .logo-link {
@@ -75,9 +76,9 @@ button:focus {
 }
 
 .header-area .nav {
-    position: absolute;
+    position: relative;
     right: 0;
-    margin-right: 20vw;
+    margin-right: 8vw;
     transition: all 0.3s ease 0s;
 }
 
@@ -104,6 +105,36 @@ button:focus {
     color: #EEB600;
 }
 
+.main-nav .header-button-container{
+    position: relative;
+    right: 0;
+    margin-left: 30px;
+}
+
+.main-nav .header-button-container .header-button {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease 0s;
+}
+
+#common-header-area .header-button-container .header-button {
+    border: 2px solid #EEB600;
+    background-color: transparent;
+    color: #F9C200;
+}
+
+#common-header-area .header-button-container .header-button:hover {
+    border: 2px solid #c9c9c9;
+    background-color: transparent;
+    color: #CCCCCC;
+}
+
 
 main{
     position: absolute;
@@ -120,11 +151,13 @@ main{
     padding: 0;
 }
 
-#customer-home-page,
-#customer-booking-page{
-    height: 100vh;
-    background: url("../assets/images/home-bg.jpg") no-repeat bottom;
-    background-size: cover;
+.main-page-bg-div{
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .page-overlay{
@@ -133,7 +166,85 @@ main{
     height: 100%;
 }
 
-.page-overlay .caption {
+#common-home-page{
+    height: 100vh;
+    background: url("../assets/images/common-bg.jpg") no-repeat bottom;
+    background-size: cover;
+}
+
+#common-home-page .main-page-bg-div{
+    width: 100%;
+    height: 100%;
+}
+
+#common-home-page .main-page-bg-div .bg-div:nth-child(1){
+    flex-grow: 2;
+    background-color: #1E2E3C;
+}
+
+#common-home-page .main-page-bg-div .bg-div:nth-child(2){
+    flex-grow: 1;
+    background-color: #EEB600;
+}
+
+#common-home-page .page-overlay{
+    display: flex;
+    justify-content: end;
+}
+
+#common-home-page .page-overlay .caption {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    width: 47%;
+    height: 100%;
+}
+
+#common-home-page .page-overlay .caption h2 {
+    margin-top: 10px;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #FFF;
+    letter-spacing: 1px;
+}
+
+#common-home-page .page-overlay .caption h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #F9C200;
+    letter-spacing: 1px;
+}
+
+#common-home-page .page-overlay .caption h6 {
+    margin-left: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFF;
+    letter-spacing: 1.5px;
+}
+
+#common-home-page .middle-button{
+    --c1: #EEB600;
+    --c2: #fff;
+    --c3: #fff;
+    --c4: #000;
+    display: none;
+}
+
+#customer-home-page,
+#customer-booking-page{
+    height: 100vh;
+    background: url("../assets/images/home-bg.jpg") no-repeat bottom;
+    background-size: cover;
+}
+
+#customer-home-page .page-overlay .caption {
     position: absolute;
     text-align: center;
     width: 80%;
@@ -142,7 +253,7 @@ main{
     transform: translate(-50%,-50%);
 }
 
-.page-overlay .caption h6 {
+#customer-home-page .page-overlay .caption h6 {
     margin-top: 0;
     font-size: 16px;
     text-transform: uppercase;
@@ -151,7 +262,7 @@ main{
     letter-spacing: .5px;
 }
 
-.page-overlay .caption h4 {
+#customer-home-page .page-overlay .caption h4 {
     margin-top: 10px;
     font-size: 28px;
     text-transform: uppercase;
@@ -160,16 +271,16 @@ main{
     letter-spacing: 1px;
 }
 
-.page-overlay .caption h4:nth-child(2) {
+#customer-home-page .page-overlay .caption h4:nth-child(2) {
     color: Transparent;
 }
 
-.page-overlay .caption h4:nth-child(2) a {
+#customer-home-page .page-overlay .caption h4:nth-child(2) a {
     text-decoration: none;
     color: #F9C200;
 }
 
-.page-overlay .caption h2 {
+#customer-home-page .page-overlay .caption h2 {
     margin-top: 55px;
     margin-bottom: 0;
     font-size: 50px;
@@ -179,7 +290,7 @@ main{
     letter-spacing: 1px;
 }
 
-.page-overlay .caption h2 em {
+#customer-home-page .page-overlay .caption h2 em {
     font-style: normal;
     color: #F9C200;
     font-weight: 600;
