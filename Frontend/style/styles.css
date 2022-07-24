@@ -588,7 +588,7 @@ main{
     left: 50%;
     transform: translate(-50%,-50%);
     width: 100%;
-    height: 60%;
+    height: 65%;
 }
 
 #common-cars-page .section-title,
@@ -650,8 +650,7 @@ main{
 }
 
 
-#common-cars-page .main-carousel,
-#customer-cars-page .main-carousel{
+.main-carousel{
     position: absolute;
     bottom: 0;
     left: 12.5%;
@@ -659,28 +658,24 @@ main{
 }
 
 
-#common-cars-page .car-list,
-#customer-cars-page .car-list{
+.car-list{
     position: relative;
     width: 75vw;
     height: 33.15vh;
 }
 
-#common-cars-page .car-list .car,
-#customer-cars-page .car-list .car{
+.car-list .car{
     display: flex;
     width: 75vw;
     height: 33.15vh;
 }
 
-#common-cars-page .car-list .car-tag,
-#customer-cars-page .car-list .car-tag{
+.car-list .car-tag{
     width: 25%;
     height: 33.15vh;
 }
 
-#common-cars-page .car-list .car-tag h3,
-#customer-cars-page .car-list .car-tag h3 {
+.car-list .car-tag h3 {
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
     font-weight: 700;
@@ -689,8 +684,7 @@ main{
     margin: 30px 0 0 0;
 }
 
-#common-cars-page .car-list .car-tag .subtitle,
-#customer-cars-page .car-list .car-tag .subtitle {
+.car-list .car-tag .subtitle {
     position: relative;
     color: #888;
     text-transform: uppercase;
@@ -702,8 +696,7 @@ main{
     padding-bottom: 20px;
 }
 
-#common-cars-page .car-list .car-tag .subtitle:after,
-#customer-cars-page .car-list .car-tag .subtitle:after {
+.car-list .car-tag .subtitle:after {
     position: absolute;
     content: '';
     width: 40px;
@@ -713,8 +706,7 @@ main{
     bottom: 0;
 }
 
-#common-cars-page .car-list .car-tag .car-price strong,
-#customer-cars-page .car-list .car-tag .car-price strong {
+.car-list .car-tag .car-price strong {
     font-size: 48px;
     color: #DDD;
     font-family: 'Open Sans', sans-serif;
@@ -722,8 +714,7 @@ main{
     font-weight: 700;
 }
 
-#common-cars-page .car-list .car-tag .car-price span,
-#customer-cars-page .car-list .car-tag .car-price span {
+.car-list .car-tag .car-price span {
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
@@ -734,8 +725,7 @@ main{
     margin-top: 5px;
 }
 
-#common-cars-page .car-list .car-tag .btn,
-#customer-cars-page .car-list .car-tag .btn{
+.car-list .car-tag .btn{
     display: block;
     background: #333;
     margin-top: 20px;
@@ -751,8 +741,7 @@ main{
     border: 1px solid transparent;
 }
 
-#common-cars-page .car-list .car-image,
-#customer-cars-page .car-list .car-image{
+.car-list .car-image{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -760,14 +749,12 @@ main{
     height: 33.15vh;
 }
 
-#common-cars-page .car-list .car-image img,
-#customer-cars-page .car-list .car-image img{
+.car-list .car-image img{
     width: 85%;
     margin: 0;
 }
 
-#common-cars-page .car-list .car-info,
-#customer-cars-page .car-list .car-info{
+.car-list .car-info{
     position: relative;;
     width: 25%;
     height: 33.15vh;
@@ -775,8 +762,7 @@ main{
     color: #FFF;
 }
 
-#common-cars-page .car-list .car-info ul,
-#customer-cars-page .car-list .car-info ul{
+.car-list .car-info ul{
     position: relative;
     width: 100%;
     height: 100%;
@@ -788,8 +774,7 @@ main{
     justify-content: space-between;
 }
 
-#common-cars-page .car-list .car-info ul li,
-#customer-cars-page .car-list .car-info ul li{
+.car-list .car-info ul li{
     position: relative;
     flex-grow: 1;
     display: flex;
@@ -801,20 +786,17 @@ main{
     font-weight: 400;
 }
 
-#common-cars-page .car-list .car-info span,
-#customer-cars-page .car-list .car-info span{
+.car-list .car-info span{
     font-weight: 700;
 }
 
-#common-cars-page .car-list-controls,
-#customer-cars-page .car-list-controls{
+.car-list-controls{
     position: relative;
     height: 80px;
     width: 100%;
 }
 
-#common-cars-page .car-list-nav,
-#customer-cars-page .car-list-nav{
+.car-list-nav{
     position: relative;
     display: flex;
     justify-content: center;
@@ -823,8 +805,7 @@ main{
     width: 100%;
 }
 
-#common-cars-page .car-list-nav div,
-#customer-cars-page .car-list-nav div{
+.car-list-nav div{
     position: relative;
     display: flex;
     align-self: center;
@@ -840,14 +821,12 @@ main{
     transition: all 0.3s ease 0s;
 }
 
-#common-cars-page .car-list-nav div:hover,
-#customer-cars-page .car-list-nav div:hover{
+.car-list-nav div:hover{
     border: 3px solid #F9C200;
     color: #F9C200;
 }
 
-#common-cars-page .car-list-nav i,
-#customer-cars-page .car-list-nav i {
+.car-list-nav i {
     display: flex;
     align-self: center;
     justify-content: center;

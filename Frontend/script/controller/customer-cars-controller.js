@@ -69,14 +69,16 @@ window.onload = function() {
     loadAllCustomerCars();
 };
 
-let customer_owl = $('#customer-car-list');
+let customer_owl = $('.owl-customer-cars');
 
 customer_owl.owlCarousel({
     loop:true,
     margin:10,
+    autoHeight:true,
     autoplay:false,
     autoplayTimeout:4000,
     autoplaySpeed:600,
+    autoplayHoverPause:true,
     nav:false,
     dots:false,
     responsive:{
@@ -95,17 +97,17 @@ $('#customer-car-list-prev').click(function() {
 });
 
 function loadAllCustomerCars(){
-    for (let c of customer_cars) {
-        let car = $('<div class="item car"></div>');
+    for (let customer_c of customer_cars) {
+        let customer_car = $('<div class="item car"></div>');
 
-        let car_tag = $('<div class="car-tag"><h3>'+c.car_tag.h3+'</h3><div class="subtitle">'+c.car_tag.subtitle+'</div><div class="car-price"><strong>'+c.car_tag.car_price.strong+'</strong><span>'+c.car_tag.car_price.span+'</span></div><a href="#" class="btn"><i class="fa fa-calendar-alt" aria-hidden="true"></i>Reserve Now</a></div>');
-        let car_image = $('<div class="car-image"><img src="assets/images/cars/'+c.car_image+'" alt=""></div>');
-        let car_info = $('<div class="car-info"><ul><li>Doors: <strong>'+c.car_info.doors+'</strong></li><li>Passengers: <strong>'+c.car_info.passengers+'</strong></li><li>Luggage: <strong>'+c.car_info.luggage+'</strong></li><li>Transmission: <strong>'+c.car_info.transmission+'</strong></li><li>Air conditioning: <strong>'+c.car_info.air_conditioning+'</strong></li><li>Minimum age: <strong>'+c.car_info.minimum_age+'</strong></li></ul></div>');
+        let customer_car_tag = $('<div class="car-tag"><h3>'+customer_c.car_tag.h3+'</h3><div class="subtitle">'+customer_c.car_tag.subtitle+'</div><div class="car-price"><strong>'+customer_c.car_tag.car_price.strong+'</strong><span>'+customer_c.car_tag.car_price.span+'</span></div><a href="#" class="btn"><i class="fa fa-calendar-alt" aria-hidden="true"></i>Reserve Now</a></div>');
+        let customer_car_image = $('<div class="car-image"><img src="assets/images/cars/'+customer_c.car_image+'" alt=""></div>');
+        let customer_car_info = $('<div class="car-info"><ul><li>Doors: <strong>'+customer_c.car_info.doors+'</strong></li><li>Passengers: <strong>'+customer_c.car_info.passengers+'</strong></li><li>Luggage: <strong>'+customer_c.car_info.luggage+'</strong></li><li>Transmission: <strong>'+customer_c.car_info.transmission+'</strong></li><li>Air conditioning: <strong>'+customer_c.car_info.air_conditioning+'</strong></li><li>Minimum age: <strong>'+customer_c.car_info.minimum_age+'</strong></li></ul></div>');
 
-        car.append(car_tag);
-        car.append(car_image);
-        car.append(car_info);
+        customer_car.append(customer_car_tag);
+        customer_car.append(customer_car_image);
+        customer_car.append(customer_car_info);
 
-        customer_owl.trigger('add.owl.carousel', [car]).trigger('refresh.owl.carousel');
+        customer_owl.trigger('add.owl.carousel', [customer_car]).trigger('refresh.owl.carousel');
     }
 }
