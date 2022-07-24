@@ -51,5 +51,5 @@ TxtType.prototype.tick = function() {
 };
 
 $("#home-middle-button").click(function(){
-    booking_link.click();
+    customer_booking_link.click();
 });

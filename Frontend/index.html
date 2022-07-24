@@ -39,15 +39,32 @@
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
-                    <a class="logo" href="#" id="logo-link">Easy <em>Car</em></a>
+                    <a class="logo logo-link" href="#" id="common-logo-link">Easy <em>Car</em></a>
                     <ul class="nav">
-                        <li><a href="#" id="home-link" class="active">Home</a></li>
-                        <li><a href="#" id="booking-link">Booking</a></li>
-                        <li><a href="#" id="cars-link">Cars</a></li>
-                        <li><a href="#" id="history-link">History</a></li>
-                        <li><a href="#" id="notifications-link">Notifications</a></li>
-                        <li><a href="#" id="profile-link">Profile</a></li>
-                        <li><a href="#" id="contact-link">Contact</a></li>
+                        <li><a href="#" id="common-home-link" class="active">Home</a></li>
+                        <li><a href="#" id="common-services-link">Services</a></li>
+                        <li><a href="#" id="common-cars-link">Cars</a></li>
+                        <li><a href="#" id="common-contact-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<header style="display: none" class="header-area" id="customer-header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <a class="logo logo-link" href="#" id="customer-logo-link">Easy <em>Car</em></a>
+                    <ul class="nav">
+                        <li><a href="#" id="customer-home-link" class="active">Home</a></li>
+                        <li><a href="#" id="customer-booking-link">Booking</a></li>
+                        <li><a href="#" id="customer-cars-link">Cars</a></li>
+                        <li><a href="#" id="customer-history-link">History</a></li>
+                        <li><a href="#" id="customer-notifications-link">Notifications</a></li>
+                        <li><a href="#" id="customer-profile-link">Profile</a></li>
+                        <li><a href="#" id="customer-contact-link">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -115,8 +132,7 @@
                                         Pick-Up
                                     </span>
                                     <label for="pickup"></label>
-                                    <select class="form-control" data-live-search="true" id="pickup" name="pickup"
-                                            required="required">
+                                    <select class="form-control" data-live-search="true" id="pickup" name="pickup" required="required">
                                         <option value="">Select Pick-Up</option>
                                         <option>New York</option>
                                         <option>Los Angeles</option>
@@ -223,102 +239,7 @@
                     </div>
                     <div class="main-carousel">
                         <div class="car-list owl-carousel owl-theme">
-                            <div class="item car">
-                                <div class="car-tag">
-                                    <h3>BMW 3-SERIES</h3>
-                                    <div class="subtitle">ModernLine</div>
-                                    <div class="car-price"> <strong>$99</strong> <span>/Day</span> </div>
-                                    <a href="#" class="btn">
-                                        <i class="fa fa-calendar-alt" aria-hidden="true"></i>
-                                        Reserve Now
-                                    </a>
-                                </div>
-                                <div class="car-image">
-                                    <img src="assets/images/cars/01.png" alt="">
-                                </div>
-                                <div class="car-info">
-                                    <ul>
-                                        <li>Doors: <strong>4</strong></li>
-                                        <li>Passengers: <strong>5</strong></li>
-                                        <li>Luggage: <strong>2 Bags</strong></li>
-                                        <li>Transmission: <strong>Automatic</strong></li>
-                                        <li>Air conditioning: <strong>Dual Zone</strong></li>
-                                        <li>Minimum age: <strong>35 years</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item car">
-                                <div class="car-tag">
-                                    <h3>Subaru Impreza</h3>
-                                    <div class="subtitle">Premium</div>
-                                    <div class="car-price"> <strong>$125</strong> <span>/Day</span> </div>
-                                    <a href="#" class="btn">
-                                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                                        Reserve Now
-                                    </a>
-                                </div>
-                                <div class="car-image">
-                                    <img src="assets/images/cars/02.png" alt="">
-                                </div>
-                                <div class="car-info">
-                                    <ul>
-                                        <li>Doors: <strong>4</strong></li>
-                                        <li>Passengers: <strong>5</strong></li>
-                                        <li>Luggage: <strong>2 Bags</strong></li>
-                                        <li>Transmission: <strong>Automatic</strong></li>
-                                        <li>Air conditioning: <strong>Dual Zone</strong></li>
-                                        <li>Minimum age: <strong>35 years</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item car">
-                                <div class="car-tag">
-                                    <h3>Hyundai Santa Fe XL</h3>
-                                    <div class="subtitle">Streetsville H</div>
-                                    <div class="car-price"> <strong>$199</strong> <span>/Day</span> </div>
-                                    <a href="#" class="btn">
-                                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                                        Reserve Now
-                                    </a>
-                                </div>
-                                <div class="car-image">
-                                    <img src="assets/images/cars/03.png" alt="">
-                                </div>
-                                <div class="car-info">
-                                    <ul>
-                                        <li>Doors: <strong>4</strong></li>
-                                        <li>Passengers: <strong>5</strong></li>
-                                        <li>Luggage: <strong>2 Bags</strong></li>
-                                        <li>Transmission: <strong>Automatic</strong></li>
-                                        <li>Air conditioning: <strong>Dual Zone</strong></li>
-                                        <li>Minimum age: <strong>35 years</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item car">
-                                <div class="car-tag">
-                                    <h3>Honda Vezel</h3>
-                                    <div class="subtitle">Streetsville H</div>
-                                    <div class="car-price"> <strong>$215</strong> <span>/Day</span> </div>
-                                    <a href="#" class="btn">
-                                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                                        Reserve Now
-                                    </a>
-                                </div>
-                                <div class="car-image">
-                                    <img src="assets/images/cars/04.png" alt="">
-                                </div>
-                                <div class="car-info">
-                                    <ul>
-                                        <li>Doors: <strong>4</strong></li>
-                                        <li>Passengers: <strong>5</strong></li>
-                                        <li>Luggage: <strong>2 Bags</strong></li>
-                                        <li>Transmission: <strong>Automatic</strong></li>
-                                        <li>Air conditioning: <strong>Dual Zone</strong></li>
-                                        <li>Minimum age: <strong>35 years</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="car-list-controls">
                             <div class="car-list-nav">
@@ -327,20 +248,6 @@
                                 </div>
                                 <div class="car-list-next">
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="owl-dots" style="display: block;">
-                                <div class="owl-dot">
-                                    <span></span>
-                                </div>
-                                <div class="owl-dot">
-                                    <span></span>
-                                </div>
-                                <div class="owl-dot active">
-                                    <span></span>
-                                </div>
-                                <div class="owl-dot">
-                                    <span></span>
                                 </div>
                             </div>
                         </div>

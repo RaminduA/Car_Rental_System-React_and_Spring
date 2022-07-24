@@ -46,7 +46,7 @@ button:focus {
     align-items: center;
 }
 
-#logo-link {
+.logo-link {
     position: absolute;
     left: 12vw;
     line-height: 36px;
@@ -57,19 +57,19 @@ button:focus {
     transition: color 0.7s ease 0s;
 }
 
-#logo-link:hover {
+.logo-link:hover {
     color: #F9C200;
     transition: color 0.7s ease 0s;
 }
 
-#logo-link em {
+.logo-link em {
     font-style: normal;
     color: #F9C200;
     font-weight: 600;
     transition: color 0.7s ease 0s;
 }
 
-#logo-link:hover em{
+.logo-link:hover em{
     color: #fff;
     transition: color 0.7s ease 0s;
 }
@@ -186,7 +186,7 @@ main{
 }
 
 #customer-home-page .middle-button{
-    --c1: #F9C200;
+    --c1: #EEB600;
     --c2: #fff;
     --c3: #fff;
     --c4: #000;
@@ -406,7 +406,6 @@ main{
     bottom: 0;
     left: 12.5%;
     width: 75vw;
-    height: 39vh;
 }
 
 
