@@ -6,6 +6,8 @@ let common_home_link = $("#common-home-link");
 let common_services_link = $("#common-services-link");
 let common_cars_link = $("#common-cars-link");
 let common_contact_link = $("#common-contact-link");
+let common_login_button = $("#common-login-button");
+let common_register_button = $("#common-register-button");
 
 let customer_logo_link = $("#customer-logo-link");
 let customer_home_link = $("#customer-home-link");
@@ -18,6 +20,7 @@ let customer_contact_link = $("#customer-contact-link");
 
 let common_home_page = $("#common-home-page");
 let common_cars_page = $("#common-cars-page");
+let login_register_page = $("#login-register-page");
 
 let customer_home_page = $("#customer-home-page");
 let customer_booking_page = $("#customer-booking-page");
@@ -26,7 +29,7 @@ let customer_cars_page = $("#customer-cars-page");
 $(document).ready(function() {
     displayActiveHeaderArea(common_header_area);
     focusActiveLink(common_home_link);
-    displayActivePage(common_home_page);
+    displayActivePage(login_register_page);
 });
 
 common_logo_link.click(function (){
@@ -52,6 +55,22 @@ common_cars_link.click(function (){
 common_contact_link.click(function (){
     focusActiveLink(common_contact_link);
     //displayActivePage(customer_home_page);
+});
+
+common_login_button.click(function (){
+    displayActivePage(login_register_page);
+    if(!common_login_button.hasClass('active') && common_register_button.hasClass('active')){
+        document.querySelector('#login-register-flipper').classList.toggle("flip");
+    }
+    focusActiveLink(common_login_button);
+});
+
+common_register_button.click(function (){
+    displayActivePage(login_register_page);
+    if(!common_register_button.hasClass('active')){
+        document.querySelector('#login-register-flipper').classList.toggle("flip");
+    }
+    focusActiveLink(common_register_button);
 });
 
 customer_logo_link.click(function (){
@@ -95,6 +114,8 @@ function focusActiveLink(active_link) {
     common_services_link.removeClass("active");
     common_cars_link.removeClass("active");
     common_contact_link.removeClass("active");
+    common_login_button.removeClass("active");
+    common_register_button.removeClass("active");
 
     customer_home_link.removeClass("active");
     customer_booking_link.removeClass("active");
@@ -114,10 +135,13 @@ function displayActiveHeaderArea(active_header_area) {
 }
 
 function displayActivePage(active_page) {
-    /*common_home_page.css("display","none");
+    common_home_page.css("display","none");
     common_cars_page.css("display","none");
+    login_register_page.css("display","none");
+
     customer_home_page.css("display","none");
     customer_booking_page.css("display","none");
-    customer_cars_page.css("display","none");*/
+    customer_cars_page.css("display","none");
+
     active_page.css("display","block");
 }

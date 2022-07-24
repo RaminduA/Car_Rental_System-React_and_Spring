@@ -135,6 +135,63 @@
             </div>
         </div>
 
+        <div class="main-page" id="login-register-page">
+            <div class="page-overlay flip-container">
+                <div class="flipper" id="login-register-flipper">
+                    <div class="front">
+                        <div class="heading-container">
+                            <h1 class="title">Login</h1>
+                        </div>
+                        <form class="login-form">
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="login-username"></label>
+                                    <input class="form-control" id="login-username" name="username" placeholder="Enter Username"
+                                           required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="login-password"></label>
+                                    <input class="form-control" id="login-password" name="password" placeholder="Enter Password"
+                                           required="" type="password">
+                                </div>
+                            </div>
+                        </form>
+                        <a class="flip-button" id="login-flip-button" href="#">Don't Have an Account?</a>
+                        <div class="login-button-container">
+                            <div class="middle-button" id="middle-login-button">
+                                Login
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="back">
+                        <h1 class="title">Register</h1>
+                        <form class="register-form">
+                            <input type="text" placeholder="Username" />
+                            <input type="password" placeholder="Password" />
+                            <input type="button" value="Sign up"/>
+                        </form>
+                        <a class="flip-button" id="register-flip-button" href="#">Already Have an Account?</a>
+                        <div class="register-button-container">
+                            <div class="middle-button" id="middle-register-button">
+                                Register
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="main-page" id="customer-home-page">
             <div class="page-overlay">
                 <div class="caption">
@@ -329,6 +386,7 @@
 <script src="script/spa/spa.js"></script>
 <script src="script/controller/common-home-controller.js"></script>
 <script src="script/controller/common-cars-controller.js"></script>
+<script src="script/controller/login-register-controller.js"></script>
 <script src="script/controller/customer-home-controller.js"></script>
 <script src="script/controller/customer-booking-controller.js"></script>
 <script src="script/controller/customer-cars-controller.js"></script>

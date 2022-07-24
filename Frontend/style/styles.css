@@ -129,6 +129,11 @@ button:focus {
     color: #F9C200;
 }
 
+#common-header-area .header-button-container .header-button.active {
+    border: 2px solid #b80f0f;
+    color: #d01111;
+}
+
 #common-header-area .header-button-container .header-button:hover {
     border: 2px solid #c9c9c9;
     background-color: transparent;
@@ -236,6 +241,132 @@ main{
     --c4: #000;
     display: none;
 }
+
+
+#login-register-page{
+    height: 100vh;
+    background: url("../assets/images/login-bg.jpg") no-repeat bottom;
+    background-size: cover;
+}
+
+#login-register-page .page-overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000;
+}
+
+.flipper {
+    position: relative;
+    padding: 30px;
+    width: 40vw;
+    height:50vh;
+    background: #EEB600;
+    transition: all 0.9s ease 0s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    /*background-color: rgba(0,0,0,.9);*/
+    position: absolute;
+    padding:10px 30px;
+    top: 0;
+    left: 0;
+    right: 0;
+    backface-visibility: hidden;
+}
+
+.front{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+.back{
+    transform: rotateY(180deg);
+}
+
+.flip{
+    transform: rotateY(180deg);
+}
+
+.flip-button{
+    color:#1E2E3C;
+    text-decoration:none;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+}
+
+.flipper input{
+    width:100%;
+    margin-bottom:15px;
+    height:40px;
+    box-sizing: border-box;
+    padding:10px;
+}
+
+.title{
+    text-align: center;
+}
+
+#login-register-page .heading-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+}
+
+#login-register-page .heading-container h1{
+    margin-top: 10px;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #FFF;
+    letter-spacing: 1px;
+}
+
+#login-register-page .login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+    height: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#login-register-page .form-row{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#login-register-page .form-row .input-group input{
+    width: 100%;
+    height: 100%;
+}
+
+.login-form .form-row{
+    width: 100%;
+}
+
+#login-register-page .middle-button{
+    --c1: #243849;
+    --c2: #F9C200;
+    --c3: #FFF;
+    --c4: #1E2E3C;
+}
+
+
+
+
+
+
+
 
 #customer-home-page,
 #customer-booking-page{
@@ -418,7 +549,6 @@ main{
 #customer-booking-page .form-row:last-child>.input-group:last-child{
     width: 35%;
     align-items: center;
-    /*background-color: #F9C200;*/
 }
 
 #customer-booking-page .form-row:last-child>.input-group:last-child>label{
