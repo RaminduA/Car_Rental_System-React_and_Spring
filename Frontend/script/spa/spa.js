@@ -59,16 +59,20 @@ common_contact_link.click(function (){
 
 common_login_button.click(function (){
     displayActivePage(login_register_page);
-    if(!common_login_button.hasClass('active') && common_register_button.hasClass('active')){
+    if(login_register_flipper.hasClass('face-register')){
         document.querySelector('#login-register-flipper').classList.toggle("flip");
+        login_register_flipper.removeClass('face-register');
+        login_register_flipper.addClass('face-login');
     }
     focusActiveLink(common_login_button);
 });
 
 common_register_button.click(function (){
     displayActivePage(login_register_page);
-    if(!common_register_button.hasClass('active')){
+    if(login_register_flipper.hasClass('face-login')){
         document.querySelector('#login-register-flipper').classList.toggle("flip");
+        login_register_flipper.removeClass('face-login');
+        login_register_flipper.addClass('face-register');
     }
     focusActiveLink(common_register_button);
 });

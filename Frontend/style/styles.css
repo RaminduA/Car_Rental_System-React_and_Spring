@@ -259,17 +259,21 @@ main{
 .flipper {
     position: relative;
     padding: 30px;
-    width: 40vw;
+    width: 30vw;
     height:50vh;
-    background: #EEB600;
+    border-radius: 6px;
     transition: all 0.9s ease 0s;
     transform-style: preserve-3d;
 }
 
 .front, .back {
-    /*background-color: rgba(0,0,0,.9);*/
     position: absolute;
+    height: 100%;
+    width: 100%;
     padding:10px 30px;
+    background: rgba(255,255,255,.05);
+    /*border: 1px solid rgba(255,255,255,.25);*/
+    backdrop-filter: blur(15px);
     top: 0;
     left: 0;
     right: 0;
@@ -293,10 +297,14 @@ main{
 }
 
 .flip-button{
-    color:#1E2E3C;
+    color:#CCC;
     text-decoration:none;
     text-align: center;
     transition: all 0.3s ease 0s;
+}
+
+.flip-button:hover{
+    color:#FFF;
 }
 
 .flipper input{
@@ -333,16 +341,16 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    width: 60%;
-    height: 40%;
+    justify-content: center;
+    width: 75%;
+    height: 30%;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 #login-register-page .form-row{
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 #login-register-page .form-row .input-group input{
@@ -354,11 +362,18 @@ main{
     width: 100%;
 }
 
+#login-register-page .login-button-container{
+    position: relative;
+    width: 100%;
+    height: 20%;
+}
+
 #login-register-page .middle-button{
-    --c1: #243849;
-    --c2: #F9C200;
-    --c3: #FFF;
-    --c4: #1E2E3C;
+    --c1: rgba(255,255,255,.4);
+    --c2: #444;
+    --c3: rgba(255,255,255,.03);
+    --c4: #111;
+    backdrop-filter: blur(15px);
 }
 
 
