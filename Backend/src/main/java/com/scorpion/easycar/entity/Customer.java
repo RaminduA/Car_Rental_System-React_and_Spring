@@ -3,33 +3,25 @@ package com.scorpion.easycar.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@ToString
 @Entity
 public class Customer {
     @Id
-    private String customerId;
+    private String id;
     private String name;
-    private String address;
-    private int contactNo;
     private String email;
-    private String nicNo;
-    private String nicFrontImg;
-    private String nicBackImg;
-    private String licenceNo;
-    private String licenceImg;
-    private String username;
-    private String password;
-    private final String status = "Pending";
+    private String address;
+    private String contact;
+    private String nicFrontImage;
+    private String nicRearImage;
+    private String licenceImage;
 
-    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
-    private List<CarRent> rentals = new ArrayList<>();
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="accountId", referencedColumnName="id", nullable=false)
+    private Account account;
 }

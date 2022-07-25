@@ -12,33 +12,26 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@ToString
 @Entity
 public class Car {
     @Id
-    private String registrationNO;
+    private String id;
     private String brand;
-    private String type;
-    private int noOfPassengers;
+    private String carType;
+    private String model;
+    private int passengerCount;
     private String transmissionType;
     private String fuelType;
-    private String color;
-    private String frontViewImg;
-    private String backViewImg;
-    private String sideViewImg;
-    private String internalViewImg;
+    private String colour;
+    private String frontView;
+    private String rearView;
+    private String lateralView;
+    private String interiorView;
     private double dailyRate;
     private double monthlyRate;
-    private double freeKmForPrice;
-    private double freeKmForDuration;
-    private double lossDamageWaiver;
-    private double priceForExtraKm;
-    private double completeKm;
-    private final String status = "Available";
-
-    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
-    private List<CarRent> rentals = new ArrayList<>();
-
-    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
-    private List<Maintenance> maintenances = new ArrayList<>();
+    private double distancePerDay;
+    private double distancePerMonth;
+    private double pricePerExtraKM;
+    private double ldw;
+    private String status;
 }

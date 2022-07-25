@@ -10,16 +10,12 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @Entity
-public class Driver {
+public class Admin {
     @Id
     private String id;
     private String name;
-    private String address;
+    private String email;
     private String contact;
-    private String nicFrontImage;
-    private String nicRearImage;
-    private String licenceImage;
-    private String status;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="accountId", referencedColumnName="id", nullable=false)
