@@ -27,6 +27,7 @@ public class Car {
     private String rearView;
     private String lateralView;
     private String interiorView;
+    private String displayPicture;
     private double dailyRate;
     private double monthlyRate;
     private double distancePerDay;

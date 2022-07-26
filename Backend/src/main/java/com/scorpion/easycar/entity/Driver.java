@@ -16,6 +16,7 @@ public class Driver {
     private String name;
     private String address;
     private String contact;
+    private String displayPicture;
     private String nicFrontImage;
     private String nicRearImage;
     private String licenceImage;

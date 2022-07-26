@@ -16,6 +16,8 @@ public class Payment {
     private String id;
     private LocalDate date;
     private String ldwSlip;
+    private double expectedCost;
+    private double extraMileageCost;
     private double damageCost;
     private double netTotal;
 
