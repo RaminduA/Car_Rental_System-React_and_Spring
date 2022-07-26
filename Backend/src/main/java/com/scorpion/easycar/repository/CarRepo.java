@@ -2,29 +2,37 @@ package com.scorpion.easycar.repository;
 
 import com.scorpion.easycar.entity.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 
-public interface CarRepo extends JpaRepository<Car, String> {
+public interface CarRepo extends JpaRepository<Car,String> {
+    @Query(value = "UPDATE Car SET status=:status WHERE id=:id")
+    void updateStatus(@Param("status")String status, @Param("id")String id);
 
-    @Modifying
-    @Transactional
-    @Query(value = "UPDATE Car SET status=:status WHERE registrationNO=:registrationNO", nativeQuery = true)
-    void updateCarStatus(@Param("status") String status, @Param("registrationNO") String registrationNO);
+    @Query(value = "UPDATE Car SET frontView=:frontView, rearView=:rearView, lateralView=:lateralView, interiorView=:interiorView, displayPicture=:displayPicture WHERE id=:id")
+    void updatePictures(@Param("frontView")String frontView, @Param("rearView")String rearView, @Param("lateralView")String lateralView, @Param("interiorView")String interiorView, @Param("displayPicture")String displayPicture, @Param("id")String id);
 
-    @Modifying
-    @Transactional
-    @Query(value = "UPDATE Car SET frontViewImg=:frontViewImg,backViewImg=:backViewImg,internalViewImg=:internalViewImg,sideViewImg=:sideViewImg WHERE registrationNO=:registrationNO",nativeQuery = true)
-    void updateCarFilePaths(@Param("frontViewImg") String frontViewImg, @Param("backViewImg") String backViewImg, @Param("internalViewImg") String internalViewImg, @Param("sideViewImg") String sideViewImg, @Param("registrationNO") String registrationNO);
+    @Query(value = "UPDATE Car SET frontView=:frontView WHERE id=:id")
+    void updateFrontView(@Param("frontView")String frontView, @Param("id")String id);
 
-    @Query(value = "SELECT * FROM Car WHERE status=:status",nativeQuery = true)
-    List<Car> getAllCarsByStatus(@Param("status") String status);
+    @Query(value = "UPDATE Car SET rearView=:rearView WHERE id=:id")
+    void updateRearView(@Param("rearView")String rearView, @Param("id")String id);
 
-    @Query(value = "SELECT COUNT(registrationNO) FROM Car WHERE status=:status",nativeQuery = true)
-    int getCountOfCarsByStatus(@Param("status") String status);
+    @Query(value = "UPDATE Car SET lateralView=:lateralView WHERE id=:id")
+    void updateLateralView(@Param("lateralView")String lateralView, @Param("id")String id);
+
+    @Query(value = "UPDATE Car SET interiorView=:interiorView WHERE id=:id")
+    void updateInteriorView(@Param("interiorView")String interiorView, @Param("id")String id);
+
+    @Query(value = "UPDATE Car SET displayPicture=:displayPicture WHERE id=:id")
+    void updateDisplayPicture(@Param("displayPicture")String displayPicture, @Param("id")String id);
+
+    @Query(value = "FROM Car WHERE status=:status")
+    List<Car> getAllByStatus(@Param("status")String status);
+
+    @Query(value = "SELECT COUNT(id) FROM Car WHERE status=:status")
+    int getCountByStatus(@Param("status")String status);
 }
