@@ -14,9 +14,6 @@ import java.time.LocalDate;
 public class Rental {
     @Id
     private String id;
-    private String customerId;
-    private String carId;
-    private String driverId;
     private String pickupVenue;
     private LocalDate pickupDate;
     private String dropOffVenue;

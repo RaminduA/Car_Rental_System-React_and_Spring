@@ -14,8 +14,6 @@ import java.time.LocalDate;
 public class Payment {
     @Id
     private String id;
-    private String rentalId;
-    private String customerId;
     private LocalDate date;
     private String ldwSlip;
     private double damageCost;
