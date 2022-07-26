@@ -67,27 +67,32 @@ public class CarController {
         return new ResponseUtil(200, "Ok", service.getCountByStatus(status));
     }
 
-    @PutMapping(path = "/up/{registrationID}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil uploadImagesAndPath(@RequestPart("frontImg") MultipartFile frontImg, @RequestPart("backImg") MultipartFile backImg, @RequestPart("interImg") MultipartFile interImg, @RequestPart("sideImg") MultipartFile sideImg, @PathVariable String registrationID) {
-        try {
-            String projectPath = String.valueOf(new File("Desktop/Final Project - 2nd Sem/Application/Car Rental System"));
-            File uploadsDir = new File(projectPath + "/Cars");
-            uploadsDir.mkdir();
-            frontImg.transferTo(new File(uploadsDir.getAbsolutePath() + "/" + frontImg.getOriginalFilename()));
-            backImg.transferTo(new File(uploadsDir.getAbsolutePath() + "/" + backImg.getOriginalFilename()));
-            interImg.transferTo(new File(uploadsDir.getAbsolutePath() + "/" + interImg.getOriginalFilename()));
-            sideImg.transferTo(new File(uploadsDir.getAbsolutePath() + "/" + sideImg.getOriginalFilename()));
+    @PutMapping(path = "/up/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil uploadImagesAndPath(@RequestPart("frontView")MultipartFile frontView, @RequestPart("rearView")MultipartFile rearView, @RequestPart("lateralView")MultipartFile lateralView, @RequestPart("interiorView")MultipartFile interiorView, @RequestPart("displayPicture")MultipartFile displayPicture, @PathVariable String id){
+        try{
+            String projectPath = String.valueOf(new File("C:/Users/RAMINDU/Desktop/Final Project - 2nd Sem/Application/Car Rental System"));
+            File uploadDirectory = new File(projectPath + "/Cars");
+            if(uploadDirectory.mkdir()){
+                frontView.transferTo(new File(uploadDirectory.getAbsolutePath() + "/" + frontView.getOriginalFilename()));
+                rearView.transferTo(new File(uploadDirectory.getAbsolutePath() + "/" + rearView.getOriginalFilename()));
+                lateralView.transferTo(new File(uploadDirectory.getAbsolutePath() + "/" + lateralView.getOriginalFilename()));
+                interiorView.transferTo(new File(uploadDirectory.getAbsolutePath() + "/" + interiorView.getOriginalFilename()));
+                displayPicture.transferTo(new File(uploadDirectory.getAbsolutePath() + "/" + displayPicture.getOriginalFilename()));
 
-            String frontImgPath = projectPath + "/Cars/" + frontImg.getOriginalFilename();
-            String backImgPath = projectPath + "/Cars/" + backImg.getOriginalFilename();
-            String interImgPath = projectPath + "/Cars/" + interImg.getOriginalFilename();
-            String sideImgPath = projectPath + "/Cars/" + sideImg.getOriginalFilename();
+                /*String frontViewPath = projectPath + "/Cars/" + frontView.getOriginalFilename();
+                String rearViewPath = projectPath + "/Cars/" + rearView.getOriginalFilename();
+                String lateralViewPath = projectPath + "/Cars/" + lateralView.getOriginalFilename();
+                String interiorViewPath = projectPath + "/Cars/" + interiorView.getOriginalFilename();
+                String displayPicturePath = projectPath + "/Cars/" + displayPicture.getOriginalFilename();*/
 
-            service.updatePictures(frontImgPath, backImgPath, interImgPath, sideImgPath, registrationID);
+                //service.updatePictures(frontViewPath, rearViewPath, lateralViewPath, interiorViewPath, displayPicturePath, id);
+                service.updatePictures(frontView.getBytes(), rearView.getBytes(), lateralView.getBytes(), interiorView.getBytes(), displayPicture.getBytes(), id);
 
-            return new ResponseUtil(200, "Uploaded", null);
+                return new ResponseUtil(200, "Uploaded", null);
+            }
+            return new ResponseUtil(200, "Uploading Failed", null);
 
-        } catch (IOException e) {
+        }catch (IOException e){
             e.printStackTrace();
             return new ResponseUtil(500, "Error", null);
         }
