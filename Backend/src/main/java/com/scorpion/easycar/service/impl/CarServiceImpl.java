@@ -17,75 +17,122 @@ import java.util.List;
 public class CarServiceImpl implements CarService {
 
     @Autowired
-    CarRepo repo;
+    CarRepo carRepo;
 
     @Autowired
-    ModelMapper mapper;
+    ModelMapper modelMapper;
 
     @Override
-    public void saveCar(CarDTO dto) {
-        if (!repo.existsById(dto.getRegistrationNO())) {
-            repo.save(mapper.map(dto, Car.class));
-        } else {
+    public void saveCar(CarDTO dto){
+        if(!carRepo.existsById(dto.getId())){
+            carRepo.save(modelMapper.map(dto, Car.class));
+        }else{
             throw new RuntimeException("Car Already Exists");
         }
     }
 
     @Override
-    public void updateCar(CarDTO dto) {
-        if (repo.existsById(dto.getRegistrationNO())) {
-            repo.save(mapper.map(dto, Car.class));
-        } else {
+    public void updateCar(CarDTO dto){
+        if(carRepo.existsById(dto.getId())){
+            carRepo.save(modelMapper.map(dto, Car.class));
+        }else{
             throw new RuntimeException("No Such Car To Update");
         }
     }
 
     @Override
-    public void deleteCar(String registrationNO) {
-        if (repo.existsById(registrationNO)) {
-            repo.deleteById(registrationNO);
-        } else {
+    public void deleteCar(String id){
+        if(carRepo.existsById(id)){
+            carRepo.deleteById(id);
+        }else{
             throw new RuntimeException("No Such Car To Delete");
         }
     }
 
     @Override
-    public List<CarDTO> getAllCars() {
-        return mapper.map(repo.findAll(), new TypeToken<List<CarDTO>>() {
-        }.getType());
+    public List<CarDTO> getAllCars(){
+        return modelMapper.map(carRepo.findAll(), new TypeToken<List<CarDTO>>(){}.getType());
     }
 
     @Override
-    public CarDTO searchCar(String registrationNO) {
-        return mapper.map(repo.findById(registrationNO).get(), CarDTO.class);
+    public CarDTO getCar(String id){
+        if(carRepo.findById(id).isPresent()){
+            return modelMapper.map(carRepo.findById(id).get(), CarDTO.class);
+        }else{
+            throw new RuntimeException("No Such Car To Delete");
+        }
     }
 
     @Override
-    public void updateCarStatus(String registrationNO, String status) {
-        if (repo.existsById(registrationNO)) {
-            repo.updateCarStatus(status, registrationNO);
-        } else {
+    public void updateStatus(String status, String id){
+        if(carRepo.existsById(id)){
+            carRepo.updateStatus(status, id);
+        }else{
             throw new RuntimeException("No Such Car To Update");
         }
     }
 
     @Override
-    public void updateCarFilePaths(String frontImg, String backImg, String interImg, String sideImg, String registrationID) {
-        if (repo.existsById(registrationID)) {
-            repo.updateCarFilePaths(frontImg, backImg, interImg, sideImg, registrationID);
-        } else {
+    public void updatePictures(byte[] frontView, byte[] rearView, byte[] lateralView, byte[] interiorView, byte[] displayPicture, String id){
+        if(carRepo.existsById(id)){
+            carRepo.updatePictures(modelMapper.map(frontView,String.class), modelMapper.map(rearView,String.class), modelMapper.map(lateralView,String.class), modelMapper.map(interiorView,String.class), modelMapper.map(displayPicture,String.class), id);
+        }else{
             throw new RuntimeException("No Such Car To Update");
         }
     }
 
     @Override
-    public List<CarDTO> getAllCarsByStatus(String status) {
-        return mapper.map(repo.getAllCarsByStatus(status), new TypeToken<List<CarDTO>>() {
-        }.getType());
+    public void updateFrontView(byte[] frontView, String id){
+        if(carRepo.existsById(id)){
+            carRepo.updateFrontView(modelMapper.map(frontView,String.class), id);
+        }else{
+            throw new RuntimeException("No Such Car To Update");
+        }
     }
 
     @Override
-    public int getCountOfCarsByStatus(String status) {
-        return repo.getCountOfCarsByStatus(status);
+    public void updateRearView(byte[] rearView, String id){
+        if(carRepo.existsById(id)){
+            carRepo.updateRearView(modelMapper.map(rearView,String.class), id);
+        }else{
+            throw new RuntimeException("No Such Car To Update");
+        }
+    }
+
+    @Override
+    public void updateLateralView(byte[] lateralView, String id){
+        if(carRepo.existsById(id)){
+            carRepo.updateLateralView(modelMapper.map(lateralView,String.class), id);
+        }else{
+            throw new RuntimeException("No Such Car To Update");
+        }
+    }
+
+    @Override
+    public void updateInteriorView(byte[] interiorView, String id){
+        if(carRepo.existsById(id)){
+            carRepo.updateInteriorView(modelMapper.map(interiorView,String.class), id);
+        }else{
+            throw new RuntimeException("No Such Car To Update");
+        }
+    }
+
+    @Override
+    public void updateDisplayPicture(byte[] displayPicture, String id){
+        if(carRepo.existsById(id)){
+            carRepo.updateDisplayPicture(modelMapper.map(displayPicture,String.class), id);
+        }else{
+            throw new RuntimeException("No Such Car To Update");
+        }
+    }
+
+    @Override
+    public List<CarDTO> getAllByStatus(String status){
+        return modelMapper.map(carRepo.getAllByStatus(status), new TypeToken<List<CarDTO>>(){}.getType());
+    }
+
+    @Override
+    public int getCountByStatus(String status){
+        return carRepo.getCountByStatus(status);
     }
 }

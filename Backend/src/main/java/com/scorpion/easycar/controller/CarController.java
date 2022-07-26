@@ -48,23 +48,23 @@ public class CarController {
 
     @GetMapping(path = "/{registrationNo}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil searchCar(@PathVariable String registrationNo) {
-        return new ResponseUtil(200, "Ok", service.searchCar(registrationNo));
+        return new ResponseUtil(200, "Ok", service.getCar(registrationNo));
     }
 
     @PutMapping(path = "/updateCarStatus/{registrationNO}/{status}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateCarStatus(@PathVariable String registrationNO, @PathVariable String status) {
-        service.updateCarStatus(registrationNO, status);
+        service.updateStatus(registrationNO, status);
         return new ResponseUtil(200, "Ok", null);
     }
 
     @GetMapping(path = "/getByStatus/{status}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllCarsByStatus(@PathVariable String status) {
-        return new ResponseUtil(200, "Ok", service.getAllCarsByStatus(status));
+        return new ResponseUtil(200, "Ok", service.getAllByStatus(status));
     }
 
     @GetMapping(path = "/count/{status}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getCountOfCarsByStatus(@PathVariable String status) {
-        return new ResponseUtil(200, "Ok", service.getCountOfCarsByStatus(status));
+        return new ResponseUtil(200, "Ok", service.getCountByStatus(status));
     }
 
     @PutMapping(path = "/up/{registrationID}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -83,7 +83,7 @@ public class CarController {
             String interImgPath = projectPath + "/Cars/" + interImg.getOriginalFilename();
             String sideImgPath = projectPath + "/Cars/" + sideImg.getOriginalFilename();
 
-            service.updateCarFilePaths(frontImgPath, backImgPath, interImgPath, sideImgPath, registrationID);
+            service.updatePictures(frontImgPath, backImgPath, interImgPath, sideImgPath, registrationID);
 
             return new ResponseUtil(200, "Uploaded", null);
 

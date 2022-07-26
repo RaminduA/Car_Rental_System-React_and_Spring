@@ -42,12 +42,12 @@ public class DriverController {
 
     @GetMapping(path = "/{licenceNo}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil searchDriver(@PathVariable String licenceNo) {
-        return new ResponseUtil(200, "Ok", service.searchDriver(licenceNo));
+        return new ResponseUtil(200, "Ok", service.getDriver(licenceNo));
     }
 
     @GetMapping(path = "/{username}/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil searchDriverByUsernameAndPassword(@PathVariable String username, @PathVariable String password) {
-        if (service.findDriverByUsername(username)) {
+        if (service.getDriverByAccountId(username)) {
             if (service.findDriverByPassword(password)) {
                 return new ResponseUtil(200, "Login Successful", null);
             } else {
@@ -71,13 +71,13 @@ public class DriverController {
 
     @PutMapping(path = "/updateNonAvailable/{licenceNo}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateDriverNonAvailable(@PathVariable String licenceNo){
-        service.updateDriverNonAvailable(licenceNo);
+        service.updateStatus(licenceNo);
         return new ResponseUtil(200,"Ok",null);
     }
 
     @GetMapping(path = "/getAllAvailableDrivers",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllAvailableDrivers(){
-        return new ResponseUtil(200,"Ok",service.getAllAvailableDrivers());
+        return new ResponseUtil(200,"Ok",service.getAllAvailable());
     }
 
     @GetMapping(path = "/getAllNonAvailableDrivers",produces = MediaType.APPLICATION_JSON_VALUE)
