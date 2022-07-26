@@ -10,14 +10,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @ToString
-public class CustomerDTO {
+public class AdminDTO {
     private String id;
     private String name;
     private String email;
-    private String address;
     private String contact;
-    private byte[] nicFrontImage;
-    private byte[] nicRearImage;
-    private byte[] licenceImage;
     private AccountDTO account;
 }

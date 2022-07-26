@@ -5,17 +5,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @ToString
 public class DriverDTO {
-    private String licenceNo;
+    private String id;
     private String name;
     private String address;
-    private int contactNo;
-    private String nicNo;
-    private String username;
-    private String password;
-    private final boolean availability = true;
+    private String contact;
+    private byte[] displayPicture;
+    private byte[] nicFrontImage;
+    private byte[] nicRearImage;
+    private byte[] licenceImage;
+    private String status;
+    private AccountDTO account;
 }
