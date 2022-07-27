@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class PaymentDTO {
     private String id;
     private LocalDate date;
-    private byte[] ldwSlip;
+    private double ldw;
     private double expectedCost;
     private double extraMileageCost;
     private double damageCost;

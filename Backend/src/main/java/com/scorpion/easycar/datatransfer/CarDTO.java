@@ -24,6 +24,7 @@ public class CarDTO {
     private byte[] lateralView;
     private byte[] interiorView;
     private byte[] displayPicture;
+    private double lastMaintenance;
     private double dailyRate;
     private double monthlyRate;
     private double distancePerDay;

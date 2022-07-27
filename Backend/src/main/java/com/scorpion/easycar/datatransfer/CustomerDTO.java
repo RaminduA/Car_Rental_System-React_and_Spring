@@ -16,6 +16,7 @@ public class CustomerDTO {
     private String email;
     private String address;
     private String contact;
+    private byte[] displayPicture;
     private byte[] nicFrontImage;
     private byte[] nicRearImage;
     private byte[] licenceImage;
