@@ -58,19 +58,22 @@ public class AdminBookingServiceImpl implements AdminBookingService {
     @Override
     public List<RentalDTO> getDriverScheduleForTheWeek(String id) {
         String today = DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now());
-        int endDate = Integer.parseInt(today.split("-")[2]) - LocalDate.now().getDayOfWeek().getValue() + 7;
-        return modelMapper.map(rentalRepo.getRentalsBetweenTwoDatesById(today,endDate,id), new TypeToken<List<RentalDTO>>(){}.getType());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        int lastDate = Integer.parseInt(today.split("-")[2]) - LocalDate.now().getDayOfWeek().getValue() + 7;
+        String endDate = today.substring(0, today.length()-2) + lastDate;
+        return modelMapper.map(rentalRepo.findAllByDriverIdAndPickupDateBetween(id, LocalDate.parse(today, formatter), LocalDate.parse(endDate, formatter)), new TypeToken<List<RentalDTO>>(){}.getType());
     }
 
     @Override
     public List<RentalDTO> getDriverScheduleForTheMonth(String id) {
         String today = DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String[] split = today.split("-");
         int year = Integer.parseInt(split[0]);
         int month = Integer.parseInt(split[1]);
         int lastDate = YearMonth.of(year, month).lengthOfMonth();
         String endDate = today.substring(0, today.length()-2) + lastDate;
-        return modelMapper.map(rentalRepo.getRentalsBetweenTwoDatesById(today,endDate,id), new TypeToken<List<RentalDTO>>(){}.getType());
+        return modelMapper.map(rentalRepo.findAllByDriverIdAndPickupDateBetween(id, LocalDate.parse(today, formatter), LocalDate.parse(endDate, formatter)), new TypeToken<List<RentalDTO>>(){}.getType());
     }
 
     @Override
