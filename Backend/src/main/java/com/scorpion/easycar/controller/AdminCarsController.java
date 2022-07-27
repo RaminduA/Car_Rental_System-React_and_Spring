@@ -23,7 +23,7 @@ public class AdminCarsController {
 
     @GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getCar(@PathVariable String id) {
-        return new ResponseUtil(200, "Ok", service.getCar(id));
+        return new ResponseUtil(200, "OK", service.getCar(id));
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -46,13 +46,13 @@ public class AdminCarsController {
     @DeleteMapping(params = {"id"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil deleteCar(@RequestParam String id) {
         service.deleteCar(id);
-        return new ResponseUtil(200, "deleted", null);
+        return new ResponseUtil(200, "Deleted", null);
     }
 
     @PutMapping(path = "set-status/{status}/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateStatus(@PathVariable String status, @PathVariable String id) {
         service.updateStatus(status, id);
-        return new ResponseUtil(200, "Ok", null);
+        return new ResponseUtil(200, "OK", null);
     }
 
     @GetMapping(path = "get-by-status/{status}", produces = MediaType.APPLICATION_JSON_VALUE)

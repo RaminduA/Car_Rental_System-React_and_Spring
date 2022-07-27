@@ -22,12 +22,12 @@ public class LoginRegisterController {
 
     @GetMapping(path = "get-customer-id", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getCustomerId() {
-        return new ResponseUtil(200, "Login Successful", service.getCustomerId());
+        return new ResponseUtil(200, "OK", service.getCustomerId());
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil registerUser() {
-        return new ResponseUtil(200, "Login Successful", null);
+        return new ResponseUtil(200, "Sign Up Successful", null);
     }
 
 }
