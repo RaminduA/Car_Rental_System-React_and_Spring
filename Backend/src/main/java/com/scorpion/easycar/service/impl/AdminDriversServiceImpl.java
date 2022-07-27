@@ -3,7 +3,7 @@ package com.scorpion.easycar.service.impl;
 import com.scorpion.easycar.datatransfer.DriverDTO;
 import com.scorpion.easycar.entity.Driver;
 import com.scorpion.easycar.repository.DriverRepo;
-import com.scorpion.easycar.service.DriverService;
+import com.scorpion.easycar.service.AdminDriversService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +15,27 @@ import java.util.List;
 
 @Service
 @Transactional
-public class DriverServiceImpl implements DriverService {
-    @Autowired
-    DriverRepo driverRepo;
+public class AdminDriversServiceImpl implements AdminDriversService {
 
     @Autowired
-    ModelMapper modelMapper;
+    private DriverRepo driverRepo;
 
+    @Autowired
+    private ModelMapper modelMapper;
+
+    @Override
+    public DriverDTO getDriver(String id){
+        if(driverRepo.findById(id).isPresent()){
+            return modelMapper.map(driverRepo.findById(id).get(),DriverDTO.class);
+        }else{
+            throw new RuntimeException("Driver Not Found...");
+        }
+    }
+
+    @Override
+    public List<DriverDTO> getAllDrivers(){
+        return modelMapper.map(driverRepo.findAll(), new TypeToken<List<DriverDTO>>(){}.getType());
+    }
 
     @Override
     public void saveDriver(DriverDTO dto){
@@ -51,20 +65,6 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
-    public DriverDTO getDriver(String id){
-        if(driverRepo.findById(id).isPresent()){
-            return modelMapper.map(driverRepo.findById(id).get(),DriverDTO.class);
-        }else{
-            throw new RuntimeException("Driver Not Found...");
-        }
-    }
-
-    @Override
-    public List<DriverDTO> getAllDrivers(){
-        return modelMapper.map(driverRepo.findAll(), new TypeToken<List<DriverDTO>>(){}.getType());
-    }
-
-    @Override
     public DriverDTO getDriverByAccountId(String accountId){
         Driver entity = driverRepo.findByAccount_Id(accountId);
         if(entity!=null){
@@ -85,8 +85,7 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public List<DriverDTO> getAllAvailable() {
-        return modelMapper.map(driverRepo.getAllAvailableDrivers(), new TypeToken<List<DriverDTO>>() {
-        }.getType());
+        return modelMapper.map(driverRepo.getAllAvailableDrivers(), new TypeToken<List<DriverDTO>>(){}.getType());
     }
 
     @Override

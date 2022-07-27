@@ -1,9 +1,10 @@
 package com.scorpion.easycar.service.impl;
 
 import com.scorpion.easycar.datatransfer.CarDTO;
+import com.scorpion.easycar.datatransfer.CustomerDTO;
 import com.scorpion.easycar.entity.Car;
 import com.scorpion.easycar.repository.CarRepo;
-import com.scorpion.easycar.service.CarService;
+import com.scorpion.easycar.service.AdminCarsService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,48 +15,16 @@ import java.util.List;
 
 @Service
 @Transactional
-public class CarServiceImpl implements CarService {
+public class AdminCarsServiceImpl implements AdminCarsService {
 
     @Autowired
-    CarRepo carRepo;
+    private CarRepo carRepo;
 
     @Autowired
-    ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
     @Override
-    public void saveCar(CarDTO dto){
-        if(!carRepo.existsById(dto.getId())){
-            carRepo.save(modelMapper.map(dto, Car.class));
-        }else{
-            throw new RuntimeException("Car Already Exists");
-        }
-    }
-
-    @Override
-    public void updateCar(CarDTO dto){
-        if(carRepo.existsById(dto.getId())){
-            carRepo.save(modelMapper.map(dto, Car.class));
-        }else{
-            throw new RuntimeException("No Such Car To Update");
-        }
-    }
-
-    @Override
-    public void deleteCar(String id){
-        if(carRepo.existsById(id)){
-            carRepo.deleteById(id);
-        }else{
-            throw new RuntimeException("No Such Car To Delete");
-        }
-    }
-
-    @Override
-    public List<CarDTO> getAllCars(){
-        return modelMapper.map(carRepo.findAll(), new TypeToken<List<CarDTO>>(){}.getType());
-    }
-
-    @Override
-    public CarDTO getCar(String id){
+    public CarDTO getCar(String id) {
         if(carRepo.findById(id).isPresent()){
             return modelMapper.map(carRepo.findById(id).get(), CarDTO.class);
         }else{
@@ -64,12 +33,54 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public void updateStatus(String status, String id){
+    public List<CarDTO> getAllCars() {
+        return modelMapper.map(carRepo.findAll(), new TypeToken<List<CustomerDTO>>(){}.getType());
+    }
+
+    @Override
+    public void saveCar(CarDTO dto) {
+        if(!carRepo.existsById(dto.getId())){
+            carRepo.save(modelMapper.map(dto, Car.class));
+        }else{
+            throw new RuntimeException("Car Already Exists");
+        }
+    }
+
+    @Override
+    public void updateCar(CarDTO dto) {
+        if(carRepo.existsById(dto.getId())){
+            carRepo.save(modelMapper.map(dto, Car.class));
+        }else{
+            throw new RuntimeException("No Such Car To Update");
+        }
+    }
+
+    @Override
+    public void deleteCar(String id) {
+        if(carRepo.existsById(id)){
+            carRepo.deleteById(id);
+        }else{
+            throw new RuntimeException("No Such Car To Delete");
+        }
+    }
+
+    @Override
+    public void updateStatus(String status, String id) {
         if(carRepo.existsById(id)){
             carRepo.updateStatus(status, id);
         }else{
             throw new RuntimeException("No Such Car To Update");
         }
+    }
+
+    @Override
+    public List<CarDTO> getAllByStatus(String status) {
+        return modelMapper.map(carRepo.getAllByStatus(status), new TypeToken<List<CarDTO>>(){}.getType());
+    }
+
+    @Override
+    public int getCountByStatus(String status) {
+        return carRepo.getCountByStatus(status);
     }
 
     @Override
@@ -124,15 +135,5 @@ public class CarServiceImpl implements CarService {
         }else{
             throw new RuntimeException("No Such Car To Update");
         }
-    }
-
-    @Override
-    public List<CarDTO> getAllByStatus(String status){
-        return modelMapper.map(carRepo.getAllByStatus(status), new TypeToken<List<CarDTO>>(){}.getType());
-    }
-
-    @Override
-    public int getCountByStatus(String status){
-        return carRepo.getCountByStatus(status);
     }
 }
