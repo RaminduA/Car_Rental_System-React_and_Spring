@@ -20,10 +20,10 @@ public class CustomerProfileController {
     @Autowired
     private CustomerProfileService service;
 
-    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseUtil updateDisplayPicture(@RequestPart("displayPicture") MultipartFile displayPicture){
+    @PutMapping(path = "update-dp/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseUtil updateDisplayPicture(@RequestPart("displayPicture") MultipartFile displayPicture, @PathVariable String id){
         try{
-            service.updateDisplayPicture(displayPicture.getBytes());
+            service.updateDisplayPicture(displayPicture.getBytes(),id);
             return new ResponseUtil(200, "OK", null);
         }catch (IOException e){
             e.printStackTrace();
@@ -31,7 +31,7 @@ public class CustomerProfileController {
         }
     }
 
-    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(path = "update-info/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updatePersonalDetails(@RequestBody CustomerDTO dto){
         service.updatePersonalDetails(dto);
         return new ResponseUtil(200, "Updated", null);

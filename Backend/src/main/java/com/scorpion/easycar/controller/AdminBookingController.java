@@ -42,18 +42,21 @@ public class AdminBookingController {
 
     @PutMapping(path = "deny/{id}/{message}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil denyRentRequest(@PathVariable String id, @PathVariable String message) {
-        return new ResponseUtil(200, "OK", service.denyRentRequest(id,message));
+        service.denyRentRequest(id,message);
+        return new ResponseUtil(200, "OK", null);
     }
 
     @PutMapping(path = "accept/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil acceptRentRequest(@PathVariable String id) {
-        return new ResponseUtil(200, "OK", service.acceptRentRequest(id));
+        service.acceptRentRequest(id);
+        return new ResponseUtil(200, "OK", null);
     }
 
     @PutMapping(path = "accept/{id}/{driverId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil acceptRentRequestWithDifferentDriver(@PathVariable String id, @PathVariable String driverId) {
         try {
-            return new ResponseUtil(200, "OK", service.acceptRentRequestWithDifferentDriver(id,driverId));
+            service.acceptRentRequestWithDifferentDriver(id,driverId);
+            return new ResponseUtil(200, "OK", null);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseUtil(500, "Error", null);
