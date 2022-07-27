@@ -25,25 +25,18 @@ public class CommonCarsController {
         switch(criteria){
             case "passenger-count" :
                 return new ResponseUtil(200, "OK", service.getAllCarsSortedByPassengerCount());
-            break;
             case "transmission-type" :
                 return new ResponseUtil(200, "OK", service.getAllCarsSortedByTransmissionType());
-            break;
             case "brand" :
                 return new ResponseUtil(200, "OK", service.getAllCarsSortedByBrand());
-            break;
             case "type" :
                 return new ResponseUtil(200, "OK", service.getAllCarsSortedByType());
-            break;
             case "price" :
                 return new ResponseUtil(200, "OK", service.getAllCarsSortedByPrice());
-            break;
             case "fuel-type" :
                 return new ResponseUtil(200, "OK", service.getAllCarsSortedByFuelType());
-            break;
             default :
                 return new ResponseUtil(200, "OK", service.getAllCars());
-            break;
         }
     }
 

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class AdminDriversController {
 
     @Autowired
-    AdminDriversService service;
+    private AdminDriversService service;
 
     @GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getDriver(@PathVariable String id){
