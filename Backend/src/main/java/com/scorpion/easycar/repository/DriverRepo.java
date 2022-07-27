@@ -9,6 +9,10 @@ import java.util.List;
 
 public interface DriverRepo extends JpaRepository<Driver,String> {
     Driver findByAccount_Id(String accountId);
+    Driver findTopByOrderByIdDesc();
+
+    @Query(value="SELECT id FROM Driver")
+    List<String> getAllIds();
 
     @Query(value = "UPDATE Driver SET status=:status WHERE id=:id")
     void updateStatus(@Param("status")String status, @Param("id")String id);

@@ -9,6 +9,7 @@ import java.util.List;
 
 
 public interface CarRepo extends JpaRepository<Car,String> {
+    Car findTopByOrderByIdDesc();
     List<Car> findAllByOrderByPassengerCount();
     List<Car> findAllByOrderByTransmissionType();
     List<Car> findAllByOrderByBrand();
