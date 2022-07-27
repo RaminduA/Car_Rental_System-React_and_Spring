@@ -9,6 +9,13 @@ import java.util.List;
 
 
 public interface CarRepo extends JpaRepository<Car,String> {
+    List<Car> findAllByOrderByPassengerCount();
+    List<Car> findAllByOrderByTransmissionType();
+    List<Car> findAllByOrderByBrand();
+    List<Car> findAllByOrderByCarType();
+    List<Car> findAllByOrderByDailyRate();
+    List<Car> findAllByOrderByFuelType();
+
     @Query(value = "UPDATE Car SET status=:status WHERE id=:id")
     void updateStatus(@Param("status")String status, @Param("id")String id);
 
