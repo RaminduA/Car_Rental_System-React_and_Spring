@@ -1,27 +1,31 @@
 package com.scorpion.easycar.controller;
 
 import com.scorpion.easycar.datatransfer.DriverDTO;
-import com.scorpion.easycar.service.DriverService;
+import com.scorpion.easycar.service.AdminDriversService;
 import com.scorpion.easycar.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("api/v1/driver")
 @CrossOrigin
-public class DriverController {
+@RequestMapping("api/admin-drivers")
+public class AdminDriversController {
+
     @Autowired
-    DriverService service;
+    AdminDriversService service;
+
+    @GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getDriver(@PathVariable String id){
+        return new ResponseUtil(200, "OK", service.getDriver(id));
+    }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllDrivers(){
-        return new ResponseUtil(200, "Ok", service.getAllDrivers());
+        return new ResponseUtil(200, "OK", service.getAllDrivers());
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveDriver(DriverDTO dto){
         service.saveDriver(dto);
@@ -40,29 +44,24 @@ public class DriverController {
         return new ResponseUtil(200, "Deleted", null);
     }
 
-    @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getDriver(@PathVariable String id){
-        return new ResponseUtil(200, "Ok", service.getDriver(id));
-    }
-
-    @GetMapping(path = "/get-by-account/{accountId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "get-by-account/{accountId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getDriverByAccountId(@PathVariable String accountId){
-        return new ResponseUtil(200, "Ok", service.getDriverByAccountId(accountId));
+        return new ResponseUtil(200, "OK", service.getDriverByAccountId(accountId));
     }
 
-    @PutMapping(path = "/set-status/{status}/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(path = "set-status/{status}/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateStatus(@PathVariable String status, @PathVariable String id){
         service.updateStatus(status,id);
         return new ResponseUtil(200,"Updated",null);
     }
 
-    @GetMapping(path = "/all-available",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "all-available",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllAvailable(){
-        return new ResponseUtil(200,"Ok",service.getAllAvailable());
+        return new ResponseUtil(200,"OK",service.getAllAvailable());
     }
 
-    @GetMapping(path = "/count/{status}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "count/{status}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getCountByStatus(@PathVariable String status){
-        return new ResponseUtil(200,"Ok",service.getCountByStatus(status));
+        return new ResponseUtil(200,"OK",service.getCountByStatus(status));
     }
 }
