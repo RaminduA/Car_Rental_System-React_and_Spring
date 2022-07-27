@@ -28,7 +28,7 @@ public class AdminCarsServiceImpl implements AdminCarsService {
         if(carRepo.findById(id).isPresent()){
             return modelMapper.map(carRepo.findById(id).get(), CarDTO.class);
         }else{
-            throw new RuntimeException("No Such Car To Delete");
+            throw new RuntimeException("Car Not Found...");
         }
     }
 

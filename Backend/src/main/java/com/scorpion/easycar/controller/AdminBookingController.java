@@ -52,6 +52,11 @@ public class AdminBookingController {
 
     @PutMapping(path = "accept/{id}/{driverId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil acceptRentRequestWithDifferentDriver(@PathVariable String id, @PathVariable String driverId) {
-        return new ResponseUtil(200, "OK", service.acceptRentRequestWithDifferentDriver(id,driverId));
+        try {
+            return new ResponseUtil(200, "OK", service.acceptRentRequestWithDifferentDriver(id,driverId));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseUtil(500, "Error", null);
+        }
     }
 }
