@@ -15,7 +15,7 @@ public class Payment {
     @Id
     private String id;
     private LocalDate date;
-    private String ldwSlip;
+    private double ldw;
     private double expectedCost;
     private double extraMileageCost;
     private double damageCost;

@@ -3,11 +3,8 @@ package com.scorpion.easycar.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,6 +25,7 @@ public class Car {
     private String lateralView;
     private String interiorView;
     private String displayPicture;
+    private double lastMaintenance;
     private double dailyRate;
     private double monthlyRate;
     private double distancePerDay;

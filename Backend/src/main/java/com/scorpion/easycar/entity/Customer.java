@@ -17,6 +17,7 @@ public class Customer {
     private String email;
     private String address;
     private String contact;
+    private String displayPicture;
     private String nicFrontImage;
     private String nicRearImage;
     private String licenceImage;
