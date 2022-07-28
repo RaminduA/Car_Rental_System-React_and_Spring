@@ -1,3 +1,6 @@
+const common_cars_base_url = 'http://localhost:8080/Easy-Car-Rental/api/common-cars/';
+
+
 let common_cars = [
     {
         car_tag: {
@@ -115,4 +118,52 @@ function loadAllCommonCars(){
 
         common_owl.trigger('add.owl.carousel', [common_car]).trigger('refresh.owl.carousel');
     }
+}
+
+
+function getAllCommonCars() {
+
+    $.ajax({
+        url: common_cars_base_url,
+        method: "GET",
+        contentType: "application/json",
+        success: function (jsonResp) {
+            if(jsonResp.status===200){
+                console.log(jsonResp.data);
+            }else if(jsonResp.status===500){
+                alert(jsonResp.message);
+            }else{
+                alert(jsonResp.data);
+            }
+        },
+        error: function(ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+
+}
+
+
+function getAllCommonCarsSortedByCriteria() {
+
+    let criteria = '???';
+
+    $.ajax({
+        url: common_cars_base_url + criteria,
+        method: "GET",
+        contentType: "application/json",
+        success: function (jsonResp) {
+            if(jsonResp.status===200){
+                console.log(jsonResp.data);
+            }else if(jsonResp.status===500){
+                alert(jsonResp.message);
+            }else{
+                alert(jsonResp.data);
+            }
+        },
+        error: function(ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+
 }

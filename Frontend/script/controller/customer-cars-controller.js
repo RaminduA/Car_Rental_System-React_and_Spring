@@ -1,3 +1,6 @@
+const customer_cars_base_url = 'http://localhost:8080/Easy-Car-Rental/api/customer-cars/';
+
+
 let customer_cars = [
     {
         car_tag: {
@@ -110,4 +113,52 @@ function loadAllCustomerCars(){
 
         customer_owl.trigger('add.owl.carousel', [customer_car]).trigger('refresh.owl.carousel');
     }
+}
+
+
+function getAllCustomerCars() {
+
+    $.ajax({
+        url: customer_cars_base_url,
+        method: "GET",
+        contentType: "application/json",
+        success: function (jsonResp) {
+            if(jsonResp.status===200){
+                console.log(jsonResp.data);
+            }else if(jsonResp.status===500){
+                alert(jsonResp.message);
+            }else{
+                alert(jsonResp.data);
+            }
+        },
+        error: function(ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+
+}
+
+
+function getAllCustomerCarsSortedByCriteria() {
+
+    let criteria = '???';
+
+    $.ajax({
+        url: customer_cars_base_url + criteria,
+        method: "GET",
+        contentType: "application/json",
+        success: function (jsonResp) {
+            if(jsonResp.status===200){
+                console.log(jsonResp.data);
+            }else if(jsonResp.status===500){
+                alert(jsonResp.message);
+            }else{
+                alert(jsonResp.data);
+            }
+        },
+        error: function(ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+
 }
