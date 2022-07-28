@@ -12,7 +12,11 @@ import com.scorpion.easycar.repository.DriverRepo;
 import com.scorpion.easycar.service.LoginRegisterService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+@Service
+@Transactional
 public class LoginRegisterServiceImpl implements LoginRegisterService {
 
     @Autowired
