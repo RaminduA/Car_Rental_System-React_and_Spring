@@ -23,8 +23,8 @@ register_flip_button.click(function(){
 
 function loginUser() {
 
-    let username = 'username';
-    let password = 'password';
+    let username = $('#login-username');
+    let password = $('#login-password');
 
     $.ajax({
         url: login_register_base_url + '?username=' + username + '&password=' +password,
@@ -74,11 +74,50 @@ function registerUser() {
 
     $.ajax({
         url: login_register_base_url + 'get-customer-id',
-        method: "POST",
+        method: "GET",
         contentType: "application/json",
         success: function (jsonResp) {
             if(jsonResp.status===200){
-                console.log(jsonResp.data);
+
+
+                let id = jsonResp.data;
+                let name = $('#register-name');
+                let email = $('#register-email');
+                let address = $('#register-address');
+                let contact = $('#register-contact');
+                let username = $('#register-username');
+                let password = $('#register-password');
+                let password_confirm = $('#register-confirm-password');
+
+
+                let jsonReq = { id: id, name: name, email: email, address: address, contact: contact,
+                            account: { id: "", username: username, password: password, email: email}};
+
+                if(password === password_confirm){
+
+                    $.ajax({
+                        url: login_register_base_url + 'get-customer-id',
+                        method: "POST",
+                        contentType: "application/json",
+                        success: function (jsonResp) {
+                            if(jsonResp.status===200){
+                                console.log(jsonResp.data);
+                            }else if(jsonResp.status===500){
+                                alert(jsonResp.message);
+                            }else{
+                                alert(jsonResp.data);
+                            }
+                        },
+                        error: function(ob) {
+                            alert(ob.responseJSON.message);
+                        }
+                    });
+
+                }else{
+                    alert("Passwords you entered doesn't match");
+                }
+
+
             }else if(jsonResp.status===500){
                 alert(jsonResp.message);
             }else{

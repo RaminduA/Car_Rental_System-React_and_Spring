@@ -158,8 +158,8 @@
                                 </div>
                             </div>
                         </form>
-                        <a class="flip-button" id="login-flip-button" href="#">Don't Have an Account?</a>
                         <div class="login-button-container">
+                            <a class="flip-button" id="login-flip-button" href="#">Don't Have an Account?</a>
                             <div class="middle-button" id="middle-login-button">
                                 Login
                                 <span></span>
@@ -171,14 +171,56 @@
                     </div>
 
                     <div class="back">
-                        <h1 class="title">Register</h1>
+                        <div class="heading-container">
+                            <h1 class="title">Register</h1>
+                        </div>
                         <form class="register-form">
-                            <input type="text" placeholder="Username" />
-                            <input type="password" placeholder="Password" />
-                            <input type="button" value="Sign up"/>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="register-name"></label>
+                                    <input class="form-control" id="register-name" name="name" placeholder="Enter Full Name"
+                                           required="" type="text">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="register-username"></label>
+                                    <input class="form-control" id="register-username" name="username" placeholder="Enter Username"
+                                           required="" type="text">
+                                </div>
+                                <div class="input-group">
+                                    <label for="register-email"></label>
+                                    <input class="form-control" id="register-email" name="email" placeholder="Enter Email"
+                                           required="" type="email">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="register-address"></label>
+                                    <input class="form-control" id="register-address" name="address" placeholder="Enter Address"
+                                           required="" type="text">
+                                </div>
+                                <div class="input-group">
+                                    <label for="register-contact"></label>
+                                    <input class="form-control" id="register-contact" name="contact" placeholder="Enter Contact"
+                                           required="" type="tel">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="register-password"></label>
+                                    <input class="form-control" id="register-password" name="password" placeholder="Enter Password"
+                                           required="" type="password">
+                                </div>
+                                <div class="input-group">
+                                    <label for="register-confirm-password"></label>
+                                    <input class="form-control" id="register-confirm-password" name="password" placeholder="Confirm Password"
+                                           required="" type="password">
+                                </div>
+                            </div>
                         </form>
-                        <a class="flip-button" id="register-flip-button" href="#">Already Have an Account?</a>
                         <div class="register-button-container">
+                            <a class="flip-button" id="register-flip-button" href="#">Already Have an Account?</a>
                             <div class="middle-button" id="middle-register-button">
                                 Register
                                 <span></span>
@@ -371,6 +413,62 @@
             </div>
         </div>
 
+        <div class="main-page" id="customer-profile-page">
+            <div class="page-overlay">
+                <div class="customer-profile-cover">
+                    <div class="cover-image-section">
+                        <i class="fa fa-camera-retro"></i>
+                    </div>
+                    <div class="display-image-box">
+                        <img src="assets/images/customers/default-dp.jpg" alt="display picture">
+                        <div class="display-picture-input">
+                            <i class="fa fa-camera"></i>
+                            <input type="file" class="dp-input" hidden>
+                        </div>
+                    </div>
+                    <h3 class="customer-name-tag">
+                        John Doe
+                        <i class="fa fa-pencil-alt"></i>
+                    </h3>
+                </div>
+                <div class="customer-info-section">
+                    <div class="customer-about">
+                        <ul>
+                            <li>Name:<span>John Doe</span></li>
+                            <li>Email:<span>johndoe@gmail.com</span></li>
+                            <li>Address:<span>Colombo</span></li>
+                            <li>Contact:<span>+94772451342</span></li>
+                        </ul>
+                    </div>
+                    <div class="customer-insights">
+                        <h4>Insights</h4>
+                        <ul>
+                            <li>
+                                <h3>4</h3>
+                                <strong>votes</strong>
+                                <small>public</small>
+                            </li>
+                            <li>
+                                <h3>2</h3>
+                                <strong>reviews</strong>
+                                <small>public</small>
+                            </li>
+                            <li>
+                                <h3>6</h3>
+                                <strong>likes</strong>
+                                <small>public</small>
+                            </li>
+                            <li>
+                                <h3>7</h3>
+                                <strong>rides</strong>
+                                <small>private</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 </main>
 <!-- ***** Main Area End ***** -->
@@ -383,6 +481,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="script/spa/spa.js"></script>
 <script src="script/controller/common-home-controller.js"></script>
 <script src="script/controller/common-cars-controller.js"></script>
@@ -390,5 +491,6 @@
 <script src="script/controller/customer-home-controller.js"></script>
 <script src="script/controller/customer-booking-controller.js"></script>
 <script src="script/controller/customer-cars-controller.js"></script>
+<script src="script/controller/customer-profile-controller.js"></script>
 </body>
 </html>

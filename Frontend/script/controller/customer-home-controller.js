@@ -50,6 +50,6 @@ TxtType.prototype.tick = function() {
     }, delta);
 };
 
-$("#home-middle-button").click(function(){
+$("#customer-home-middle-button").click(function(){
     customer_booking_link.click();
 });

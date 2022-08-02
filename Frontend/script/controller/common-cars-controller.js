@@ -4,66 +4,82 @@ const common_cars_base_url = 'http://localhost:8080/Easy-Car-Rental/api/common-c
 let common_cars = [
     {
         car_tag: {
-            h3: 'BMW 3-SERIES',
-            subtitle: 'ModernLine',
-            car_price: {strong: '$99', span: '/Day'}
+            brand: 'BMW',
+            model: '3-SERIES',
+            car_type: 'ModernLine',
+            car_price: {
+                daily_rate: {strong: '$99', span: '/Day'},
+                monthly_rate: {strong: '$2499', span: '/Month'}
+            },
+            status: 'Available'
         },
         car_image: '01.png',
         car_info: {
-            doors: 4,
             passengers: 5,
-            luggage: '2 Bags',
             transmission: 'Automatic',
-            air_conditioning: 'Dual Zone',
-            minimum_age: '35 years'
+            distance_par_day: '100km',
+            distance_par_month: '4000km',
+            price_per_extra_km: '$2'
         }
     },
     {
         car_tag: {
-            h3: 'Subaru Impreza',
-            subtitle: 'Premium',
-            car_price: {strong: '$125', span: '/Day'}
+            brand: 'Subaru',
+            model: 'Impreza',
+            car_type: 'Premium',
+            car_price: {
+                daily_rate: {strong: '$125', span: '/Day'},
+                monthly_rate: {strong: '$3699', span: '/Month'}
+            },
+            status: 'Available'
         },
         car_image: '02.png',
         car_info: {
-            doors: 4,
             passengers: 5,
-            luggage: '2 Bags',
             transmission: 'Automatic',
-            air_conditioning: 'Dual Zone',
-            minimum_age: '35 years'
+            distance_par_day: '100km',
+            distance_par_month: '4000km',
+            price_per_extra_km: '$2'
         }
     },
     {
         car_tag: {
-            h3: 'Hyundai Santa Fe XL',
-            subtitle: 'Streetsville H',
-            car_price: {strong: '$199', span: '/Day'}
+            brand: 'Hyundai',
+            model: 'Santa Fe XL',
+            car_type: 'Streetsville H',
+            car_price: {
+                daily_rate: {strong: '$199', span: '/Day'},
+                monthly_rate: {strong: '$5599', span: '/Month'}
+            },
+            status: 'Available'
         },
         car_image: '03.png',
         car_info: {
-            doors: 4,
             passengers: 5,
-            luggage: '2 Bags',
             transmission: 'Automatic',
-            air_conditioning: 'Dual Zone',
-            minimum_age: '35 years'
+            distance_par_day: '100km',
+            distance_par_month: '4000km',
+            price_per_extra_km: '$2'
         }
     },
     {
         car_tag: {
-            h3: 'Honda Vezel',
-            subtitle: 'Streetsville H',
-            car_price: {strong: '$215', span: '/Day'}
+            brand: 'Honda',
+            model: 'Vezel',
+            car_type: 'Streetsville H',
+            car_price: {
+                daily_rate: {strong: '$215', span: '/Day'},
+                monthly_rate: {strong: '$6199', span: '/Month'}
+            },
+            status: 'Available'
         },
         car_image: '04.png',
         car_info: {
-            doors: 4,
             passengers: 5,
-            luggage: '2 Bags',
             transmission: 'Automatic',
-            air_conditioning: 'Dual Zone',
-            minimum_age: '35 years'
+            distance_par_day: '100km',
+            distance_par_month: '4000km',
+            price_per_extra_km: '$2'
         }
     }
 ];
@@ -108,9 +124,9 @@ function loadAllCommonCars(){
     for (let common_c of common_cars) {
         let common_car = $('<div class="item car"></div>');
 
-        let common_car_tag = $('<div class="car-tag"><h3>'+common_c.car_tag.h3+'</h3><div class="subtitle">'+common_c.car_tag.subtitle+'</div><div class="car-price"><strong>'+common_c.car_tag.car_price.strong+'</strong><span>'+common_c.car_tag.car_price.span+'</span></div></div>');
+        let common_car_tag = $('<div class="car-tag"><h3>'+common_c.car_tag.brand+' '+common_c.car_tag.model+'</h3><div class="subtitle">'+common_c.car_tag.car_type+'</div><div class="car-price"><strong>'+common_c.car_tag.car_price.daily_rate.strong+'</strong><span>'+common_c.car_tag.car_price.daily_rate.span+'</span></div><div class="car-price"><strong>'+common_c.car_tag.car_price.monthly_rate.strong+'</strong><span>'+common_c.car_tag.car_price.monthly_rate.span+'</span></div></div>');
         let common_car_image = $('<div class="car-image"><img src="assets/images/cars/'+common_c.car_image+'" alt=""></div>');
-        let common_car_info = $('<div class="car-info"><ul><li>Doors: <strong>'+common_c.car_info.doors+'</strong></li><li>Passengers: <strong>'+common_c.car_info.passengers+'</strong></li><li>Luggage: <strong>'+common_c.car_info.luggage+'</strong></li><li>Transmission: <strong>'+common_c.car_info.transmission+'</strong></li><li>Air conditioning: <strong>'+common_c.car_info.air_conditioning+'</strong></li><li>Minimum age: <strong>'+common_c.car_info.minimum_age+'</strong></li></ul></div>');
+        let common_car_info = $('<div class="car-info"><ul><li>Passengers: <strong>'+common_c.car_info.passengers+'</strong></li><li>Transmission: <strong>'+common_c.car_info.transmission+'</strong></li><li>Per Day: <strong>'+common_c.car_info.distance_par_day+'</strong></li><li>Per Month: <strong>'+common_c.car_info.distance_par_month+'</strong></li><li>Extra KM: <strong>'+common_c.car_info.price_per_extra_km+'</strong></li></ul></div>');
 
         common_car.append(common_car_tag);
         common_car.append(common_car_image);

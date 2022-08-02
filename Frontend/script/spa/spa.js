@@ -25,11 +25,12 @@ let login_register_page = $("#login-register-page");
 let customer_home_page = $("#customer-home-page");
 let customer_booking_page = $("#customer-booking-page");
 let customer_cars_page = $("#customer-cars-page");
+let customer_profile_page = $("#customer-profile-page");
 
 $(document).ready(function() {
-    displayActiveHeaderArea(common_header_area);
-    focusActiveLink(common_home_link);
-    displayActivePage(login_register_page);
+    displayActiveHeaderArea(customer_header_area);
+    focusActiveLink(customer_home_link);
+    displayActivePage(customer_home_page);
 });
 
 common_logo_link.click(function (){
@@ -107,6 +108,7 @@ customer_notifications_link.click(function (){
 
 customer_profile_link.click(function (){
     focusActiveLink(customer_profile_link);
+    displayActivePage(customer_profile_page);
 });
 
 customer_contact_link.click(function (){
@@ -146,6 +148,7 @@ function displayActivePage(active_page) {
     customer_home_page.css("display","none");
     customer_booking_page.css("display","none");
     customer_cars_page.css("display","none");
+    customer_profile_page.css("display","none");
 
     active_page.css("display","block");
 }
