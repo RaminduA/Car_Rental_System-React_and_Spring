@@ -1106,3 +1106,97 @@ main{
     font-size: 13px;
     color: #999;
 }
+
+
+#customer-notifications-page{
+    position: absolute;
+    /*background-color: #EEB600;*/
+    display: inline-block;
+    padding: 0;
+    width: 400px;
+    top: 80px;
+    right: 10%;
+    /*display: none;*/
+}
+
+.notification-count {
+    position: absolute;
+    padding: 2px 7px 2px 7px;
+    background: #CC0000;
+    font-size: 11px;
+    color: #FFF;
+    font-weight: bold;
+    margin-left: 0;
+    margin-top: -10px;
+    border-radius: 100%;
+}
+
+.notification-container {
+    background-color: rgba(255, 255, 255, .2);
+    backdrop-filter: blur(15px);
+    width: 400px;
+    z-index: 3;
+}
+
+.notification-container:before {
+    position: absolute;
+    content:'';
+    display: block;
+    background-color: rgba(255, 255, 255, .4);
+    clip-path: polygon( 50% 0, 100% 100%, 0 100%);
+    width: 40px;
+    height: 20px;
+    top: -20px;
+    left: 60px;
+}
+
+.notification-title {
+    position: relative;
+    background-color: inherit;
+    font-weight: bold;
+    padding: 8px;
+    font-size: 13px;
+    color: white;
+    z-index: 3;
+    width: 100%;
+}
+
+.notification-footer {
+    background-color: inherit;
+    text-align: center;
+    padding: 8px;
+}
+
+.notification-footer a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.notifications-list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.notifications-list li {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.notification {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    backdrop-filter: blur(5px);
+    color: #CCCCCC;
+    display: block;
+    padding: 4px 4px 4px 25px;
+}

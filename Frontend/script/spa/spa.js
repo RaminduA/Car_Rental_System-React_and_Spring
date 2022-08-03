@@ -1,5 +1,7 @@
 let common_header_area = $("#common-header-area");
 let customer_header_area = $("#customer-header-area");
+let driver_header_area = $("#driver-header-area");
+let admin_header_area = $("#admin-header-area");
 
 let common_logo_link = $("#common-logo-link");
 let common_home_link = $("#common-home-link");
@@ -17,6 +19,19 @@ let customer_history_link = $("#customer-history-link");
 let customer_notifications_link = $("#customer-notifications-link");
 let customer_profile_link = $("#customer-profile-link");
 let customer_contact_link = $("#customer-contact-link");
+
+let driver_logo_link = $("#driver-logo-link");
+let driver_home_link = $("#driver-home-link");
+let driver_services_link = $("#driver-services-link");
+let driver_schedule_link = $("#driver-schedule-link");
+let driver_contact_link = $("#driver-contact-link");
+
+let admin_logo_link = $("#admin-logo-link");
+let admin_home_link = $("#admin-home-link");
+let admin_booking_link = $("#admin-booking-link");
+let admin_cars_link = $("#admin-cars-link");
+let admin_customers_link = $("#admin-customers-link");
+let admin_drivers_link = $("#admin-drivers-link");
 
 let common_home_page = $("#common-home-page");
 let common_cars_page = $("#common-cars-page");
@@ -131,12 +146,25 @@ function focusActiveLink(active_link) {
     customer_profile_link.removeClass("active");
     customer_contact_link.removeClass("active");
 
+    driver_home_link.removeClass("active");
+    driver_services_link.removeClass("active");
+    driver_schedule_link.removeClass("active");
+    driver_contact_link.removeClass("active");
+
+    admin_home_link.removeClass("active");
+    admin_booking_link.removeClass("active");
+    admin_cars_link.removeClass("active");
+    admin_customers_link.removeClass("active");
+    admin_drivers_link.removeClass("active");
+
     active_link.addClass("active");
 }
 
 function displayActiveHeaderArea(active_header_area) {
     common_header_area.css("display","none");
     customer_header_area.css("display","none");
+    driver_header_area.css("display","none");
+    admin_header_area.css("display","none");
     active_header_area.css("display","flex");
 }
 

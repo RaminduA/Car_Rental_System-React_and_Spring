@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$/Frontend" libraries="{OwlCarousel2, all, bootstrap, jquery-3.6.0, moment}" />
+    <file url="file://$PROJECT_DIR$/Frontend" libraries="{OwlCarousel2, all, bootstrap, jquery-3.6.0, moment, sweetalert}" />
   </component>
 </project>

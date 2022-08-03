@@ -66,9 +66,45 @@
                         <li><a href="#" id="customer-booking-link">Booking</a></li>
                         <li><a href="#" id="customer-cars-link">Cars</a></li>
                         <li><a href="#" id="customer-history-link">History</a></li>
-                        <li><a href="#" id="customer-notifications-link">Notifications</a></li>
+                        <li><a href="#" id="customer-notifications-link">Notifications</a>
+                            <span class="notification-count">4</span></li>
                         <li><a href="#" id="customer-profile-link">Profile</a></li>
                         <li><a href="#" id="customer-contact-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<header class="header-area" id="driver-header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <a class="logo logo-link" href="#" id="driver-logo-link">Easy <em>Car</em></a>
+                    <ul class="nav">
+                        <li><a href="#" id="driver-home-link" class="active">Home</a></li>
+                        <li><a href="#" id="driver-services-link">Services</a></li>
+                        <li><a href="#" id="driver-schedule-link">Schedule</a></li>
+                        <li><a href="#" id="driver-contact-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<header class="header-area" id="admin-header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <a class="logo logo-link" href="#" id="admin-logo-link">Easy <em>Car</em></a>
+                    <ul class="nav">
+                        <li><a href="#" id="admin-home-link" class="active">Home</a></li>
+                        <li><a href="#" id="admin-booking-link">Booking</a></li>
+                        <li><a href="#" id="admin-cars-link">Cars</a></li>
+                        <li><a href="#" id="admin-customers-link">Customers</a></li>
+                        <li><a href="#" id="admin-drivers-link">Drivers</a></li>
                     </ul>
                 </nav>
             </div>
@@ -469,6 +505,24 @@
             </div>
         </div>
 
+        <div class="popup-page" id="customer-notifications-page">
+            <div class="notification-container" id="customer-notification-container">
+                <div class="notification-title" id="notification-title">Recent</div>
+                <div class="notifications-body notifications" id="notifications-body">
+                    <ul class="notifications-list" >
+                        <li><div class="notification" >Message 1</div></li>
+                        <li><div class="notification" >Message 2</div></li>
+                        <li><div class="notification" >Message 3</div></li>
+                        <li><div class="notification" >Message 4</div></li>
+                        <li><div class="notification" >Message 5</div></li>
+                    </ul>
+                </div>
+                <div class="notification-footer" id="notification-footer">
+                    <a href="#" id='AddNew'>See All</a>
+                </div>
+            </div>
+        </div>
+
     </section>
 </main>
 <!-- ***** Main Area End ***** -->
@@ -492,5 +546,6 @@
 <script src="script/controller/customer-booking-controller.js"></script>
 <script src="script/controller/customer-cars-controller.js"></script>
 <script src="script/controller/customer-profile-controller.js"></script>
+<script src="script/controller/customer-notifications-controller.js"></script>
 </body>
 </html>
