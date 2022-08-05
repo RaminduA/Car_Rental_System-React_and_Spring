@@ -1,17 +1,10 @@
 package com.scorpion.easycar.controller;
 
-
-import com.scorpion.easycar.datatransfer.CarDTO;
-import com.scorpion.easycar.service.AdminCarsService;
 import com.scorpion.easycar.service.CustomerNotificationsService;
 import com.scorpion.easycar.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.io.IOException;
 
 
 @RestController

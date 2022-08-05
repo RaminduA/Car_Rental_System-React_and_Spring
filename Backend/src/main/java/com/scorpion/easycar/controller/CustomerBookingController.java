@@ -16,6 +16,11 @@ public class CustomerBookingController {
     @Autowired
     private CustomerBookingService service;
 
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getRequestId(RentRequestDTO dto){
+        return new ResponseUtil(200, "OK", service.getRequestId());
+    }
+
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil requestCarBooking(RentRequestDTO dto){
         service.requestCarBooking(dto);

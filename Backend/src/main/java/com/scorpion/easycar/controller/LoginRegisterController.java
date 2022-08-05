@@ -25,6 +25,11 @@ public class LoginRegisterController {
         return new ResponseUtil(200, "OK", service.getCustomerId());
     }
 
+    @GetMapping(path = "get-account-id", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAccountId() {
+        return new ResponseUtil(200, "OK", service.getAccountId());
+    }
+
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil registerUser() {
         return new ResponseUtil(200, "Sign Up Successful", null);

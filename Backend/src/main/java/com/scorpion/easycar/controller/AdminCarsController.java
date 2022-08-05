@@ -31,6 +31,11 @@ public class AdminCarsController {
         return new ResponseUtil(200, "OK", service.getAllCars());
     }
 
+    @GetMapping(path = "id", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getCarId() {
+        return new ResponseUtil(200, "OK", service.getCarId());
+    }
+
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveCar(CarDTO dto) {
         service.saveCar(dto);

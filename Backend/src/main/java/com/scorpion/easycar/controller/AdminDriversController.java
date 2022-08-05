@@ -26,6 +26,11 @@ public class AdminDriversController {
         return new ResponseUtil(200, "OK", service.getAllDrivers());
     }
 
+    @GetMapping(path = "id", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getDriverId(){
+        return new ResponseUtil(200, "OK", service.getDriverId());
+    }
+
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveDriver(DriverDTO dto){
         service.saveDriver(dto);
