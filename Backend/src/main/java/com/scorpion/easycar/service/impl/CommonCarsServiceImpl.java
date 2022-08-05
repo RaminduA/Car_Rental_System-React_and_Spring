@@ -25,36 +25,36 @@ public class CommonCarsServiceImpl implements CommonCarsService {
 
     @Override
     public List<CarDTO> getAllCars() {
-        return modelMapper.map(carRepo.findAll(), new TypeToken<List<CustomerDTO>>(){}.getType());
+        return modelMapper.map(carRepo.findAll(), new TypeToken<List<CarDTO>>(){}.getType());
     }
 
     @Override
     public List<CarDTO> getAllCarsSortedByPassengerCount() {
-        return modelMapper.map(carRepo.findAllByOrderByPassengerCount(), new TypeToken<List<CustomerDTO>>(){}.getType());
+        return modelMapper.map(carRepo.findAllByOrderByPassengerCount(), new TypeToken<List<CarDTO>>(){}.getType());
     }
 
     @Override
     public List<CarDTO> getAllCarsSortedByTransmissionType() {
-        return modelMapper.map(carRepo.findAllByOrderByTransmissionType(), new TypeToken<List<CustomerDTO>>(){}.getType());
+        return modelMapper.map(carRepo.findAllByOrderByTransmissionType(), new TypeToken<List<CarDTO>>(){}.getType());
     }
 
     @Override
     public List<CarDTO> getAllCarsSortedByBrand() {
-        return modelMapper.map(carRepo.findAllByOrderByBrand(), new TypeToken<List<CustomerDTO>>(){}.getType());
+        return modelMapper.map(carRepo.findAllByOrderByBrand(), new TypeToken<List<CarDTO>>(){}.getType());
     }
 
     @Override
     public List<CarDTO> getAllCarsSortedByType() {
-        return modelMapper.map(carRepo.findAllByOrderByCarType(), new TypeToken<List<CustomerDTO>>(){}.getType());
+        return modelMapper.map(carRepo.findAllByOrderByCarType(), new TypeToken<List<CarDTO>>(){}.getType());
     }
 
     @Override
     public List<CarDTO> getAllCarsSortedByPrice() {
-        return modelMapper.map(carRepo.findAllByOrderByDailyRate(), new TypeToken<List<CustomerDTO>>(){}.getType());
+        return modelMapper.map(carRepo.findAllByOrderByDailyRate(), new TypeToken<List<CarDTO>>(){}.getType());
     }
 
     @Override
     public List<CarDTO> getAllCarsSortedByFuelType() {
-        return modelMapper.map(carRepo.findAllByOrderByFuelType(), new TypeToken<List<CustomerDTO>>(){}.getType());
+        return modelMapper.map(carRepo.findAllByOrderByFuelType(), new TypeToken<List<CarDTO>>(){}.getType());
     }
 }
