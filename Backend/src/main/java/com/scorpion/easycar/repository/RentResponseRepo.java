@@ -11,6 +11,9 @@ import java.util.List;
 public interface RentResponseRepo extends JpaRepository<RentResponse,String> {
     RentResponse findTopByOrderByIdDesc();
 
-    @Query(value="FROM RentResponse WHERE customer=:customer")
-    List<RentResponse> findAllUnseenResponsesByCustomer(@Param("customer") Customer customer);
+    @Query(value="FROM RentResponse WHERE status IN ('Accepted','Denied') AND customer.id=:customerId")
+    List<RentResponse> findAllUnseenResponsesByCustomerId(@Param("customerId") String customerId);
+
+    @Query(value="UPDATE RentResponse SET status='Seen' WHERE id=:id")
+    void makeResponseSeen(@Param("customerId") String id);
 }
