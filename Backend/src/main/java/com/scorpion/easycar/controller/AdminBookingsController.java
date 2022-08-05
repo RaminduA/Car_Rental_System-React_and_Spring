@@ -1,5 +1,6 @@
 package com.scorpion.easycar.controller;
 
+import com.scorpion.easycar.datatransfer.RentResponseDTO;
 import com.scorpion.easycar.service.AdminBookingService;
 import com.scorpion.easycar.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
-@RequestMapping("api/admin-booking")
-public class AdminBookingController {
+@RequestMapping("api/admin-bookings")
+public class AdminBookingsController {
 
     @Autowired
     private AdminBookingService service;
@@ -30,6 +31,16 @@ public class AdminBookingController {
         return new ResponseUtil(200, "OK", service.getDriver(id));
     }
 
+    @GetMapping(path = "response-id", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getResponseId() {
+        return new ResponseUtil(200, "OK", service.getResponseId());
+    }
+
+    @GetMapping(path = "rental-id", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getRentalId() {
+        return new ResponseUtil(200, "OK", service.getRentalId());
+    }
+
     @GetMapping(path = "weekly-schedule/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getDriverScheduleForTheWeek(@PathVariable String id) {
         return new ResponseUtil(200, "OK", service.getDriverScheduleForTheWeek(id));
@@ -40,22 +51,22 @@ public class AdminBookingController {
         return new ResponseUtil(200, "OK", service.getDriverScheduleForTheMonth(id));
     }
 
-    @PutMapping(path = "deny/{id}/{message}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil denyRentRequest(@PathVariable String id, @PathVariable String message) {
-        service.denyRentRequest(id,message);
+    @PutMapping(path = "deny", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil denyRentRequest(@RequestBody RentResponseDTO dto) {
+        service.denyRentRequest(dto);
         return new ResponseUtil(200, "OK", null);
     }
 
-    @PutMapping(path = "accept/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil acceptRentRequest(@PathVariable String id) {
-        service.acceptRentRequest(id);
+    @PutMapping(path = "accept/", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil acceptRentRequest(@RequestBody RentResponseDTO dto) {
+        service.acceptRentRequest(dto);
         return new ResponseUtil(200, "OK", null);
     }
 
-    @PutMapping(path = "accept/{id}/{driverId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil acceptRentRequestWithDifferentDriver(@PathVariable String id, @PathVariable String driverId) {
+    @PutMapping(path = "accept/{driverId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil acceptRentRequestWithDifferentDriver(@RequestBody RentResponseDTO dto, @PathVariable String driverId) {
         try {
-            service.acceptRentRequestWithDifferentDriver(id,driverId);
+            service.acceptRentRequestWithDifferentDriver(dto,driverId);
             return new ResponseUtil(200, "OK", null);
         } catch (Exception e) {
             e.printStackTrace();
