@@ -15,5 +15,5 @@ public interface RentResponseRepo extends JpaRepository<RentResponse,String> {
     List<RentResponse> findAllUnseenResponsesByCustomerId(@Param("customerId") String customerId);
 
     @Query(value="UPDATE RentResponse SET status='Seen' WHERE id=:id")
-    void makeResponseSeen(@Param("customerId") String id);
+    void makeResponseSeen(@Param("id") String id);
 }
