@@ -79,6 +79,7 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
     @Override
     public void registerCustomer(CustomerDTO dto) {
         if(!customerRepo.existsById(dto.getId())){
+            accountRepo.save(modelMapper.map(dto.getAccount(), Account.class));
             customerRepo.save(modelMapper.map(dto, Customer.class));
         }else{
             throw new RuntimeException("Customer Already Exists");
