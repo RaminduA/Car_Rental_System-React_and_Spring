@@ -28,10 +28,11 @@ let driver_contact_link = $("#driver-contact-link");
 
 let admin_logo_link = $("#admin-logo-link");
 let admin_home_link = $("#admin-home-link");
-let admin_booking_link = $("#admin-booking-link");
+let admin_bookings_link = $("#admin-bookings-link");
 let admin_cars_link = $("#admin-cars-link");
 let admin_customers_link = $("#admin-customers-link");
 let admin_drivers_link = $("#admin-drivers-link");
+let admin_payments_link = $("#admin-payments-link");
 
 let common_home_page = $("#common-home-page");
 let common_cars_page = $("#common-cars-page");
@@ -42,8 +43,17 @@ let customer_booking_page = $("#customer-booking-page");
 let customer_cars_page = $("#customer-cars-page");
 let customer_profile_page = $("#customer-profile-page");
 
+let driver_home_page = $("#driver-home-page");
+let driver_schedule_page = $("#driver-schedule-page");
+
+let admin_home_page = $("#admin-home-page");
+let admin_bookings_page = $("#admin-bookings-page");
+let admin_cars_page = $("#admin-cars-page");
+let admin_drivers_page = $("#admin-drivers-page");
+let admin_payments_page = $("#admin-payments-page");
+
 $(document).ready(function() {
-    displayActiveHeaderArea(customer_header_area);
+    displayActiveHeaderArea(admin_header_area);
     focusActiveLink(customer_home_link);
     displayActivePage(customer_home_page);
 });
@@ -130,6 +140,63 @@ customer_contact_link.click(function (){
     focusActiveLink(customer_contact_link);
 });
 
+driver_logo_link.click(function (){
+    focusActiveLink(driver_home_link);
+    displayActivePage(driver_home_page);
+});
+
+driver_home_link.click(function (){
+    focusActiveLink(driver_home_link);
+    displayActivePage(driver_home_page);
+});
+
+driver_services_link.click(function (){
+    focusActiveLink(driver_services_link);
+});
+
+driver_schedule_link.click(function (){
+    focusActiveLink(driver_schedule_link);
+    displayActivePage(driver_schedule_page);
+});
+
+driver_contact_link.click(function (){
+    focusActiveLink(driver_contact_link);
+});
+
+admin_logo_link.click(function (){
+    focusActiveLink(admin_home_link);
+    displayActivePage(admin_home_page);
+});
+
+admin_home_link.click(function (){
+    focusActiveLink(admin_home_link);
+    displayActivePage(admin_home_page);
+});
+
+admin_bookings_link.click(function (){
+    focusActiveLink(admin_bookings_link);
+    displayActivePage(admin_bookings_page);
+});
+
+admin_cars_link.click(function (){
+    focusActiveLink(admin_cars_link);
+    displayActivePage(admin_cars_page);
+});
+
+admin_customers_link.click(function (){
+    focusActiveLink(admin_customers_link);
+});
+
+admin_drivers_link.click(function (){
+    focusActiveLink(admin_drivers_link);
+    displayActivePage(admin_drivers_page);
+});
+
+admin_payments_link.click(function (){
+    focusActiveLink(admin_payments_link);
+    displayActivePage(admin_payments_page);
+});
+
 function focusActiveLink(active_link) {
     common_home_link.removeClass("active");
     common_services_link.removeClass("active");
@@ -152,10 +219,11 @@ function focusActiveLink(active_link) {
     driver_contact_link.removeClass("active");
 
     admin_home_link.removeClass("active");
-    admin_booking_link.removeClass("active");
+    admin_bookings_link.removeClass("active");
     admin_cars_link.removeClass("active");
     admin_customers_link.removeClass("active");
     admin_drivers_link.removeClass("active");
+    admin_payments_link.removeClass("active");
 
     active_link.addClass("active");
 }
@@ -177,6 +245,15 @@ function displayActivePage(active_page) {
     customer_booking_page.css("display","none");
     customer_cars_page.css("display","none");
     customer_profile_page.css("display","none");
+
+    driver_home_page.css("display","none");
+    driver_schedule_page.css("display","none");
+
+    admin_home_page.css("display","none");
+    admin_bookings_page.css("display","none");
+    admin_cars_page.css("display","none");
+    admin_drivers_page.css("display","none");
+    admin_payments_page.css("display","none");
 
     active_page.css("display","block");
 }

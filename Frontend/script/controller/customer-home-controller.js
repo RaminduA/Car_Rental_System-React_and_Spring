@@ -1,4 +1,4 @@
-window.onload = function() {
+$(document).ready(function() {
     let elements = document.getElementsByClassName('typewrite');
     for (let i=0; i<elements.length; i++) {
         let toRotate = elements[i].getAttribute('data-type');
@@ -7,7 +7,7 @@ window.onload = function() {
             new TxtType(elements[i], JSON.parse(toRotate), period);
         }
     }
-};
+});
 
 let TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;

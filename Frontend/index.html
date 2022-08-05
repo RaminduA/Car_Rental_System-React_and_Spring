@@ -15,6 +15,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="style/styles.css" rel="stylesheet">
     <link href="style/components/middle-button.css" rel="stylesheet">
+    <link href="style/components/progress-bar.css" rel="stylesheet">
     <link href="style/components/toggle-button.css" rel="stylesheet">
 </head>
 <body>
@@ -101,10 +102,11 @@
                     <a class="logo logo-link" href="#" id="admin-logo-link">Easy <em>Car</em></a>
                     <ul class="nav">
                         <li><a href="#" id="admin-home-link" class="active">Home</a></li>
-                        <li><a href="#" id="admin-booking-link">Booking</a></li>
+                        <li><a href="#" id="admin-bookings-link">Bookings</a></li>
                         <li><a href="#" id="admin-cars-link">Cars</a></li>
                         <li><a href="#" id="admin-customers-link">Customers</a></li>
                         <li><a href="#" id="admin-drivers-link">Drivers</a></li>
+                        <li><a href="#" id="admin-payments-link">Payments</a></li>
                     </ul>
                 </nav>
             </div>
@@ -518,8 +520,134 @@
                     </ul>
                 </div>
                 <div class="notification-footer" id="notification-footer">
-                    <a href="#" id='AddNew'>See All</a>
+                    <a href="#" id='AddNew'>Show All Activities</a>
                 </div>
+            </div>
+        </div>
+
+        <div class="main-page" id="driver-home-page">
+            <div class="page-overlay">
+                <div class="caption">
+                    <!--<h4>What we offer?</h4>
+                    <h4>
+                        <a href="" class="typewrite" data-period="2000" data-type='[ "Car Rental", "Special Rates", "One Way Rental", "City to City" ]'>
+                            <span class="wrap"></span>
+                        </a>.
+                    </h4>
+                    <h2>Welcome to <em>Easy Car</em></h2>
+                    <h6>Make trips better</h6>
+                    <div class="middle-button" id="customer-home-middle-button">
+                        Hire Now
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="main-page" id="driver-schedule-page">
+            <div class="page-overlay">
+
+            </div>
+        </div>
+
+        <div class="main-page" id="admin-home-page">
+            <div class="page-overlay">
+                <div class="progressbar-container">
+
+                    <div class="progressbar" style="--percent: 55">
+                        <svg class="progressbar-svg">
+                            <circle cx="80" cy="80" r="70" class="progressbar-bg-circle"> </circle>
+                            <circle cx="80" cy="80" r="70" class="progressbar-svg-circle progressbar-circle progressbar-shadow"> </circle>
+                        </svg>
+                        <span class="progressbar-text progressbar-shadow">Annual Income</span>
+                    </div>
+
+                </div>
+                <div class="caption">
+                    <!--<h4>What we offer?</h4>
+                    <h4>
+                        <a href="" class="typewrite" data-period="2000" data-type='[ "Car Rental", "Special Rates", "One Way Rental", "City to City" ]'>
+                            <span class="wrap"></span>
+                        </a>.
+                    </h4>
+                    <h2>Welcome to <em>Easy Car</em></h2>
+                    <h6>Make trips better</h6>
+                    <div class="middle-button" id="customer-home-middle-button">
+                        Hire Now
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="main-page" id="admin-bookings-page">
+            <div class="page-overlay">
+                <div class="mid-section">
+                    <h2 class="page-heading">Rent <span>Requests</span></h2>
+                    <div class="main-carousel">
+                        <div class="bookings-list owl-carousel owl-admin-bookings" id="admin-bookings-list">
+                            <!--<div class="item booking">
+                                <h3 class="request-title">REQ-000001</h3>
+                                &lt;!&ndash;<h4 class="request-id-title">REQ-000001</h4>&ndash;&gt;
+                                <div class="request-info">
+                                    <ul>
+                                        <li>Pickup Venue: <strong>Galle</strong></li>
+                                        <li>Pickup Date: <strong>2022-08-07</strong></li>
+                                        <li>Drop Off Venue: <strong>Matara</strong></li>
+                                        <li>Drop Off Date: <strong>2022-08-08</strong></li>
+                                        <li>Rental Type: <strong>Daily</strong></li>
+                                        <li>Customer: <strong>CUS-0000002</strong></li>
+                                        <li>Car: <strong>CAR-00005</strong></li>
+                                        <li>Driver: <strong class="request-driver-id">DRI-00007</strong></li>
+                                    </ul>
+                                </div>
+
+                                <div class="request-option-buttons">
+                                    <button class="request-option-button request-deny-button">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="request-option-button request-accept-button">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>-->
+                        </div>
+                        <div class="bookings-list-controls">
+                            <div class="bookings-list-nav">
+                                <div class="bookings-list-prev" id="admin-bookings-list-prev">
+                                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                                </div>
+                                <div class="bookings-list-next" id="admin-bookings-list-next">
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-page" id="admin-cars-page">
+            <div class="page-overlay">
+
+            </div>
+        </div>
+
+        <div class="main-page" id="admin-drivers-page">
+            <div class="page-overlay">
+
+            </div>
+        </div>
+
+        <div class="main-page" id="admin-payments-page">
+            <div class="page-overlay">
+
             </div>
         </div>
 
@@ -538,6 +666,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
         integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="script/spa/spa.js"></script>
 <script src="script/controller/common-home-controller.js"></script>
 <script src="script/controller/common-cars-controller.js"></script>
@@ -547,5 +676,6 @@
 <script src="script/controller/customer-cars-controller.js"></script>
 <script src="script/controller/customer-profile-controller.js"></script>
 <script src="script/controller/customer-notifications-controller.js"></script>
+<script src="script/controller/admin-bookings-controller.js"></script>
 </body>
 </html>
