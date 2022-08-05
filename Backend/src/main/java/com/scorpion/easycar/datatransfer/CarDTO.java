@@ -19,11 +19,11 @@ public class CarDTO {
     private String transmissionType;
     private String fuelType;
     private String colour;
-    private byte[] frontView;
-    private byte[] rearView;
-    private byte[] lateralView;
-    private byte[] interiorView;
-    private byte[] displayPicture;
+    private String frontView;
+    private String rearView;
+    private String lateralView;
+    private String interiorView;
+    private String displayPicture;
     private double lastMaintenance;
     private double dailyRate;
     private double monthlyRate;

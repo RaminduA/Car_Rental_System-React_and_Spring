@@ -15,10 +15,10 @@ public class DriverDTO {
     private String name;
     private String address;
     private String contact;
-    private byte[] displayPicture;
-    private byte[] nicFrontImage;
-    private byte[] nicRearImage;
-    private byte[] licenceImage;
+    private String displayPicture;
+    private String nicFrontImage;
+    private String nicRearImage;
+    private String licenceImage;
     private String status;
     private AccountDTO account;
 }

@@ -16,9 +16,9 @@ public class CustomerDTO {
     private String email;
     private String address;
     private String contact;
-    private byte[] displayPicture;
-    private byte[] nicFrontImage;
-    private byte[] nicRearImage;
-    private byte[] licenceImage;
+    private String displayPicture;
+    private String nicFrontImage;
+    private String nicRearImage;
+    private String licenceImage;
     private AccountDTO account;
 }

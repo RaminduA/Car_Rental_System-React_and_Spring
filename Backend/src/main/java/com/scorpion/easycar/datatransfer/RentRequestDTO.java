@@ -18,7 +18,7 @@ public class RentRequestDTO {
     private String dropOffVenue;
     private LocalDate dropOffDate;
     private String rentalType;
-    private byte[] ldwSlip;
+    private String ldwSlip;
     private String status;
     private CustomerDTO customer;
     private CarDTO car;
