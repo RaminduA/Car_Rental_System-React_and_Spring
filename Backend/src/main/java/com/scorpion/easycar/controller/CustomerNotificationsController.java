@@ -22,9 +22,9 @@ public class CustomerNotificationsController {
     @Autowired
     private CustomerNotificationsService service;
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllUnseenResponses() {
-        return new ResponseUtil(200, "OK", service.getAllUnseenResponses());
+    @GetMapping(path = "{customerId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllUnseenResponses(@PathVariable String customerId) {
+        return new ResponseUtil(200, "OK", service.getAllUnseenResponses(customerId));
     }
 
     @PutMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
