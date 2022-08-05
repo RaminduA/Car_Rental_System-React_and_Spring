@@ -1,5 +1,6 @@
 package com.scorpion.easycar.controller;
 
+import com.scorpion.easycar.datatransfer.CustomerDTO;
 import com.scorpion.easycar.service.LoginRegisterService;
 import com.scorpion.easycar.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,8 @@ public class LoginRegisterController {
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil registerUser() {
+    public ResponseUtil registerUser(CustomerDTO dto) {
+        service.registerCustomer(dto);
         return new ResponseUtil(200, "Sign Up Successful", null);
     }
 
