@@ -1,6 +1,7 @@
 package com.scorpion.easycar.service.impl;
 
 import com.scorpion.easycar.datatransfer.DriverDTO;
+import com.scorpion.easycar.entity.Account;
 import com.scorpion.easycar.entity.Driver;
 import com.scorpion.easycar.repository.DriverRepo;
 import com.scorpion.easycar.service.AdminDriversService;
@@ -35,6 +36,17 @@ public class AdminDriversServiceImpl implements AdminDriversService {
     @Override
     public List<DriverDTO> getAllDrivers(){
         return modelMapper.map(driverRepo.findAll(), new TypeToken<List<DriverDTO>>(){}.getType());
+    }
+
+    @Override
+    public String getDriverId() {
+        Driver top = driverRepo.findTopByOrderByIdDesc();
+        if(top!=null){
+            Integer index = Integer.getInteger(top.getId().split("-")[1]);
+            ++index;
+            return index<10 ? "DRI-00000"+index : index<100 ? "DRI-0000"+index : index<1000 ? "DRI-000"+index : index<10000 ? "DRI-00"+index : index<100000 ? "DRI-0"+index : "DRI-"+index;
+        }
+        return "DRI-000001";
     }
 
     @Override

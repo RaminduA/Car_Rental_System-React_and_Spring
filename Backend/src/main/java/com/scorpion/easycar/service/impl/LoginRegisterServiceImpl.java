@@ -66,6 +66,17 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
     }
 
     @Override
+    public String getAccountId() {
+        Account top = accountRepo.findTopByOrderByIdDesc();
+        if(top!=null){
+            Integer index = Integer.getInteger(top.getId().split("-")[1]);
+            ++index;
+            return index<10 ? "ACC-00000"+index : index<100 ? "ACC-0000"+index : index<1000 ? "ACC-000"+index : index<10000 ? "ACC-00"+index : index<100000 ? "ACC-0"+index : "ACC-"+index;
+        }
+        return "ACC-000001";
+    }
+
+    @Override
     public void registerCustomer(CustomerDTO dto) {
         if(!customerRepo.existsById(dto.getId())){
             customerRepo.save(modelMapper.map(dto, Customer.class));

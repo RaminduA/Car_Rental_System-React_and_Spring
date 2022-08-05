@@ -7,6 +7,7 @@ import java.util.List;
 public interface AdminDriversService {
     DriverDTO getDriver(String id);
     List<DriverDTO> getAllDrivers();
+    String getDriverId();
     void saveDriver(DriverDTO dto);
     void updateDriver(DriverDTO dto);
     void deleteDriver(String id);

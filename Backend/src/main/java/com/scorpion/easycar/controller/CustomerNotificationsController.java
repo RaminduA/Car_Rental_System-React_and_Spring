@@ -3,6 +3,7 @@ package com.scorpion.easycar.controller;
 
 import com.scorpion.easycar.datatransfer.CarDTO;
 import com.scorpion.easycar.service.AdminCarsService;
+import com.scorpion.easycar.service.CustomerNotificationsService;
 import com.scorpion.easycar.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

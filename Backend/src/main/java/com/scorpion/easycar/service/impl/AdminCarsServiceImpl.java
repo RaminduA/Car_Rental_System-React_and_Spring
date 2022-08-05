@@ -3,6 +3,7 @@ package com.scorpion.easycar.service.impl;
 import com.scorpion.easycar.datatransfer.CarDTO;
 import com.scorpion.easycar.datatransfer.CustomerDTO;
 import com.scorpion.easycar.entity.Car;
+import com.scorpion.easycar.entity.Driver;
 import com.scorpion.easycar.repository.CarRepo;
 import com.scorpion.easycar.service.AdminCarsService;
 import org.modelmapper.ModelMapper;
@@ -35,6 +36,17 @@ public class AdminCarsServiceImpl implements AdminCarsService {
     @Override
     public List<CarDTO> getAllCars() {
         return modelMapper.map(carRepo.findAll(), new TypeToken<List<CustomerDTO>>(){}.getType());
+    }
+
+    @Override
+    public String getCarId() {
+        Car top = carRepo.findTopByOrderByIdDesc();
+        if(top!=null){
+            Integer index = Integer.getInteger(top.getId().split("-")[1]);
+            ++index;
+            return index<10 ? "CAR-00000"+index : index<100 ? "CAR-0000"+index : index<1000 ? "CAR-000"+index : index<10000 ? "CAR-00"+index : index<100000 ? "CAR-0"+index : "CAR-"+index;
+        }
+        return "CAR-000001";
     }
 
     @Override

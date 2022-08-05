@@ -2,11 +2,14 @@ package com.scorpion.easycar.service.impl;
 
 import com.scorpion.easycar.datatransfer.DriverDTO;
 import com.scorpion.easycar.datatransfer.RentRequestDTO;
+import com.scorpion.easycar.datatransfer.RentResponseDTO;
 import com.scorpion.easycar.datatransfer.RentalDTO;
 import com.scorpion.easycar.entity.RentRequest;
+import com.scorpion.easycar.entity.RentResponse;
 import com.scorpion.easycar.entity.Rental;
 import com.scorpion.easycar.repository.DriverRepo;
 import com.scorpion.easycar.repository.RentRequestRepo;
+import com.scorpion.easycar.repository.RentResponseRepo;
 import com.scorpion.easycar.repository.RentalRepo;
 import com.scorpion.easycar.service.AdminBookingService;
 import org.modelmapper.ModelMapper;
@@ -32,6 +35,8 @@ public class AdminBookingServiceImpl implements AdminBookingService {
     private RentalRepo rentalRepo;
     @Autowired
     private RentRequestRepo rentRequestRepo;
+    @Autowired
+    private RentResponseRepo rentResponseRepo;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -56,6 +61,30 @@ public class AdminBookingServiceImpl implements AdminBookingService {
     }
 
     @Override
+    public String getResponseId() {
+        String responseId = "RES-0000001";
+        RentResponse top = rentResponseRepo.findTopByOrderByIdDesc();
+        if(top!=null){
+            Integer index = Integer.getInteger(top.getId().split("-")[1]);
+            ++index;
+            responseId = index<10 ? "RES-000000"+index : index<100 ? "RES-00000"+index : index<1000 ? "RES-0000"+index : index<10000 ? "RES-000"+index : index<100000 ? "RES-00"+index : index<1000000 ? "RES-0"+index : "RES-"+index;
+        }
+        return responseId;
+    }
+
+    @Override
+    public String getRentalId() {
+        String rentalId = "REN-0000001";
+        Rental top = rentalRepo.findTopByOrderByIdDesc();
+        if(top!=null){
+            Integer index = Integer.getInteger(top.getId().split("-")[1]);
+            ++index;
+            rentalId = index<10 ? "REN-000000"+index : index<100 ? "REN-00000"+index : index<1000 ? "REN-0000"+index : index<10000 ? "REN-000"+index : index<100000 ? "REN-00"+index : index<1000000 ? "REN-0"+index : "REN-"+index;
+        }
+        return rentalId;
+    }
+
+    @Override
     public List<RentalDTO> getDriverScheduleForTheWeek(String id) {
         String today = DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -77,20 +106,21 @@ public class AdminBookingServiceImpl implements AdminBookingService {
     }
 
     @Override
-    public void denyRentRequest(String id, String message) {
-        if(rentRequestRepo.findById(id).isPresent()){
-            RentRequest request = rentRequestRepo.findById(id).get();
+    public void denyRentRequest(RentResponseDTO dto) {
+        if(rentRequestRepo.findById(dto.getRentRequest().getId()).isPresent()){
+            RentRequest request = rentRequestRepo.findById(dto.getRentRequest().getId()).get();
             request.setStatus("Denied");
             rentRequestRepo.save(request);
+            rentResponseRepo.save(modelMapper.map(dto, RentResponse.class));
         }else{
             throw new RuntimeException("Request Not Found...");
         }
     }
 
     @Override
-    public void acceptRentRequest(String id) {
-        if(rentRequestRepo.findById(id).isPresent()){
-            RentRequest request = rentRequestRepo.findById(id).get();
+    public void acceptRentRequest(RentResponseDTO dto) {
+        if(rentRequestRepo.findById(dto.getRentRequest().getId()).isPresent()){
+            RentRequest request = rentRequestRepo.findById(dto.getRentRequest().getId()).get();
             request.setStatus("Accepted");
             rentRequestRepo.save(request);
 
@@ -116,15 +146,17 @@ public class AdminBookingServiceImpl implements AdminBookingService {
                     request.getDriver()
             ));
 
+            rentResponseRepo.save(modelMapper.map(dto, RentResponse.class));
+
         }else{
             throw new RuntimeException("Rent Request Not Found...");
         }
     }
 
     @Override
-    public void acceptRentRequestWithDifferentDriver(String id, String driverId) throws Exception {
-        if(rentRequestRepo.findById(id).isPresent()){
-            RentRequest request = rentRequestRepo.findById(id).get();
+    public void acceptRentRequestWithDifferentDriver(RentResponseDTO dto, String driverId) throws Exception {
+        if(rentRequestRepo.findById(dto.getRentRequest().getId()).isPresent()){
+            RentRequest request = rentRequestRepo.findById(dto.getRentRequest().getId()).get();
             request.setStatus("Accepted");
             rentRequestRepo.save(request);
 
@@ -149,6 +181,8 @@ public class AdminBookingServiceImpl implements AdminBookingService {
                     request.getCar(),
                     driverRepo.findById(driverId).orElseThrow(()->new Exception("Driver not found with ID : "+driverId))
             ));
+
+            rentResponseRepo.save(modelMapper.map(dto, RentResponse.class));
 
         }else{
             throw new RuntimeException("Rent Request Not Found...");
