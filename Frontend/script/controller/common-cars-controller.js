@@ -86,6 +86,8 @@ let common_cars = [
 
 $(document).ready(function() {
     loadAllCommonCars();
+    loadAllCustomerCars();
+    getAllCommonCars();
 });
 
 let common_owl = $('.owl-common-cars');
@@ -120,6 +122,22 @@ $('#common-car-list-prev').click(function() {
 });
 
 
+/*function loadAllCommonCars(car_list){
+    for (let common_c of car_list) {
+        let common_car = $('<div class="item car"></div>');
+
+        let common_car_tag = $('<div class="car-tag"><h3>'+common_c.brand+' '+common_c.model+'</h3><div class="subtitle">'+common_c.carType+'</div><div class="car-price"><strong>'+common_c.dailyRate+'</strong><span>/Day</span></div><div class="car-price"><strong>'+common_c.monthlyRate+'</strong><span>/Month</span></div></div>');
+        let common_car_image = $('<div class="car-image"><img src="../assets/'+common_c.displayPicture+'" alt=""></div>');
+        let common_car_info = $('<div class="car-info"><ul><li>Passengers: <strong>'+common_c.passengerCount+'</strong></li><li>Transmission: <strong>'+common_c.transmissionType+'</strong></li><li>Per Day: <strong>'+common_c.distancePerDay+'</strong></li><li>Per Month: <strong>'+common_c.distancePerMonth+'</strong></li><li>Extra KM: <strong>'+common_c.pricePerExtraKM+'</strong></li></ul></div>');
+
+        common_car.append(common_car_tag);
+        common_car.append(common_car_image);
+        common_car.append(common_car_info);
+
+        common_owl.trigger('add.owl.carousel', [common_car]).trigger('refresh.owl.carousel');
+    }
+}*/
+
 function loadAllCommonCars(){
     for (let common_c of common_cars) {
         let common_car = $('<div class="item car"></div>');
@@ -135,7 +153,6 @@ function loadAllCommonCars(){
         common_owl.trigger('add.owl.carousel', [common_car]).trigger('refresh.owl.carousel');
     }
 }
-
 
 function getAllCommonCars() {
 

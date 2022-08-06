@@ -74,7 +74,8 @@ let customer_cars = [
 
 window.onload = function() {
     loadAllCustomerCars();
-};
+    console.log("Motherfucker");
+}
 
 let customer_owl = $('.owl-customer-cars');
 

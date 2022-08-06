@@ -53,9 +53,9 @@ let admin_drivers_page = $("#admin-drivers-page");
 let admin_payments_page = $("#admin-payments-page");
 
 $(document).ready(function() {
-    displayActiveHeaderArea(admin_header_area);
-    focusActiveLink(customer_home_link);
-    displayActivePage(customer_home_page);
+    displayActiveHeaderArea(common_header_area);
+    focusActiveLink(common_home_link);
+    displayActivePage(common_home_page);
 });
 
 common_logo_link.click(function (){
@@ -180,7 +180,7 @@ admin_bookings_link.click(function (){
 
 admin_cars_link.click(function (){
     focusActiveLink(admin_cars_link);
-    displayActivePage(admin_cars_page);
+    //displayActivePage(admin_cars_page);
 });
 
 admin_customers_link.click(function (){
@@ -189,12 +189,12 @@ admin_customers_link.click(function (){
 
 admin_drivers_link.click(function (){
     focusActiveLink(admin_drivers_link);
-    displayActivePage(admin_drivers_page);
+    //displayActivePage(admin_drivers_page);
 });
 
 admin_payments_link.click(function (){
     focusActiveLink(admin_payments_link);
-    displayActivePage(admin_payments_page);
+    //displayActivePage(admin_payments_page);
 });
 
 function focusActiveLink(active_link) {

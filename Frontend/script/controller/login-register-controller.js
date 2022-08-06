@@ -1,9 +1,28 @@
 const login_register_base_url = 'http://localhost:8080/Easy-Car-Rental/api/login-register/';
 
 
+let middle_login_button = $('#middle-login-button');
+let middle_register_button = $('#middle-register-button');
+
 let login_flip_button = $('#login-flip-button');
 let register_flip_button = $('#register-flip-button');
 let login_register_flipper = $('#login-register-flipper');
+
+let login_username = $('#login-username');
+
+
+middle_login_button.click(function(){
+    if(login_username.val()==='customer1'){
+        displayActiveHeaderArea(customer_header_area);
+        focusActiveLink(customer_home_link);
+        displayActivePage(customer_home_page);
+    }else if(login_username.val()==='admin1'){
+        displayActiveHeaderArea(admin_header_area);
+        focusActiveLink(admin_home_link);
+        displayActivePage(admin_home_page);
+    }
+
+});
 
 
 login_flip_button.click(function(){
